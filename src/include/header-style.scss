@@ -1,63 +1,64 @@
+$gray: #ECE9E5;
+$navy: #333E48;
+
 header {
   width: 100%;
-  background-color: #333E48;
-  .innerContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
+  background-color: $navy;
+  cursor: pointer;
+
+  nav.innerContainer {
     align-items: center;
     height: 70px;
+    display: flex;
     justify-content: space-between;
-    color: #ECE9E5;
+    color: $gray;
     padding: 0 20px;
     > ul {
       display: flex;
       position: relative;
-      li {
+      > li {
         margin-left: 30px;
-        cursor: pointer;
-        &:nth-child(1):hover, &:nth-child(2):hover  {
-          .subMenu {
+        position: relative;
+        height: 70px;
+        line-height: 70px;
+        &:hover {
+          > ul.subMenu {
             display: block;
           }
         }
       }
-    }
-    .new {
-      &::before {
-        left: 37px;
-      }
-    }
-    .collections {
-      &::before {
-        left: 127px;
-      }
-    }
-    .subMenu {
-      &::before {
-        content: '';
-        display: block;
+      .subMenu {
+        transition: 0.5s;
+        line-height: 1.5;
+        display: none;
         position: absolute;
-        top: -10px;
-        width: 20px;
-        height: 20px;
-        transform: rotate(45deg);
-        background-color: #ECE9E5;
-      }
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 45px;
-      padding: 20px 10px;
-      height: 300px;
-      width: 600px;
-      color: #333E48;
-      background-color: #ECE9E5;
-      li {
+        left: 0;
+        top: 70px;
+        padding: 30px 10px;
+        height: 300px;
+        width: 600px;
+        color: $navy;
+        background-color: $gray;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 25px;
+          top: -10px;
+          width: 20px;
+          height: 20px;
+          transform: rotate(45deg);
+          background-color: $gray;
+        }
+      > li {
         margin: 15px;
-        cursor: pointer;
+        position: relative;
+        transition: 0.5s;
+        &:hover {
+          font-weight: bold;
+        }
       }
-      img {
+      > img {
         position: absolute;
         right: 0;
         z-index: 1;
@@ -65,6 +66,7 @@ header {
         height: 300px;
         
       }
+    }
     }
   }
 }

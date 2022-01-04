@@ -1,0 +1,25 @@
+$gray: #ECE9E5;
+$navy: #333E48;
+footer {
+  background-color: $gray;
+  height: 400px;
+  > ul.innerContainer {
+    display: flex;
+    justify-content: space-between;
+    > li {
+      margin-top: 50px;
+      width: 23%;
+      > ul {
+        padding-left: 10px;
+        li {
+          line-height: 2.5;
+          color: #555;
+        }
+        span {
+          font-weight: bold;
+          color: $navy;
+        }
+      }
+    }
+  }
+}
