@@ -20,3 +20,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
 }
+.innerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
