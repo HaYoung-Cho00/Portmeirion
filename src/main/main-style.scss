@@ -60,8 +60,6 @@ $navy: #333E48;
         transition: 0.5s;
         opacity: 0.3;
         background-color: $gray;
-        border-top: 1px solid $gray;
-        border-right: 1px solid $gray;
         h1 {
           margin-bottom: 20px;
         }
@@ -100,11 +98,11 @@ $navy: #333E48;
         height: 300px;
         grid-area: 4/4/5/5;
         text-align: center;
-        border: 1px solid $gray;
         font-size: 20px;
         line-height: 300px;
         &:hover {
           opacity: 1;
+          background-color: $gray;
         }
       }
     }

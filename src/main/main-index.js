@@ -76,7 +76,7 @@ function Main() {
               <button>Read More</button>
             </div>
             <div id='readmore'>
-              READ MORE 
+              <h1>READ MORE</h1> 
             </div>
           </div>
         </article>

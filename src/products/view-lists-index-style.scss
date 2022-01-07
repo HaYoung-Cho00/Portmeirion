@@ -1,0 +1,22 @@
+#viewLists {
+
+  .introHeader{
+    text-align: center;
+    > div {
+      margin: 100px 0;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+  }
+  .contents {
+    display: flex;
+    justify-content: space-between;
+
+  }
+}
