@@ -1,7 +1,7 @@
 $gray: #ECE9E5;
 $navy: #333E48;
 #searchBox {
-  width: 250px;
+  width: 270px;
   height: 600px;
   .selectType {
     border-bottom : 1px solid $gray;
@@ -22,7 +22,7 @@ $navy: #333E48;
     > li {
       height: 30px;
       line-height: 2;
-      font-size: 13px;
+      font-size: 12px;
       input[type='checkbox'] {
         width: 15px;
         float: right;

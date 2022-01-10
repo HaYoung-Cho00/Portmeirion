@@ -1,0 +1,26 @@
+$gray: #ECE9E5;
+$navy: #333E48;
+
+#login {
+  border-collapse: collapse;
+  height: 600px;
+  border : 1px solid $gray;
+  margin: 100px auto;
+  thead {
+    tr {
+      text-align: center;
+    }
+  }
+  input {
+    border: 1px solid $navy;
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+  }
+  button {
+    background-color: $navy;
+    border: none;
+    color: $gray;
+    padding: 1em 3em;
+  }
+}

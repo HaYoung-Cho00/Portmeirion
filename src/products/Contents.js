@@ -7,7 +7,7 @@ function Contents() {
       <ul>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li className='new'>NEW</li>
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
@@ -15,35 +15,35 @@ function Contents() {
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/350X350" alt="products" />
+            <img src="http://via.placeholder.com/340X340" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
