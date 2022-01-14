@@ -1,26 +1,53 @@
 $gray: #ECE9E5;
 $navy: #333E48;
 
-#login {
+table#login {
   border-collapse: collapse;
   height: 600px;
-  border : 1px solid $gray;
   margin: 100px auto;
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+  border: 1.5px solid $gray;
+  align-items: center;
+  justify-content: center;
   thead {
-    tr {
+    border-bottom: 1.5px solid $navy;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    th {
       text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      font-size: 28px;
     }
   }
-  input {
-    border: 1px solid $navy;
-    width: 200px;
-    height: 30px;
-    padding: 0 10px;
+  tbody {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    input {
+      border: none;
+      border: 1px solid $gray;
+      width: 350px;
+      height: 40px;
+      padding: 0 10px;
+      outline: none;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
   }
-  button {
-    background-color: $navy;
-    border: none;
-    color: $gray;
-    padding: 1em 3em;
+  tfoot {
+    tr {
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      background-color: $navy;
+      border: none;
+      color: $gray;
+      padding: 1em 3em;
+      margin: 20px;
+    }
   }
 }

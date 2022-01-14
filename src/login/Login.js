@@ -15,7 +15,7 @@ function Login() {
         <tbody>
           <tr>
             <td>
-              <label htmlFor='email'>E-mail</label>
+              <label htmlFor='email'>*E-mail</label>
             </td>
           </tr>
           <tr>
@@ -25,8 +25,7 @@ function Login() {
           </tr>
           <tr>
             <td>
-              <label htmlFor='password'>Password
-              </label>
+              <label htmlFor='password'>*Password</label>
             </td>
           </tr>
           <tr>
