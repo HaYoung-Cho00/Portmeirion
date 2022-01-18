@@ -1,0 +1,80 @@
+$gray: #ECE9E5;
+$navy: #333E48;
+
+header {
+  width: 100%;
+  background-color: $navy;
+  cursor: pointer;
+  min-width: 500px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  nav.innerContainer {
+    align-items: center;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    color: $gray;
+    padding: 0 20px;
+    > ul {
+      display: flex;
+      position: relative;
+      > li {
+        margin-left: 30px;
+        position: relative;
+        height: 70px;
+        line-height: 70px;
+        &:hover {
+          > ul.subMenu {
+            display: block;
+          }
+        }
+      }
+      .subMenu {
+        transition: 0.5s;
+        line-height: 1.5;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        padding: 30px 10px;
+        height: 300px;
+        width: 600px;
+        color: $navy;
+        background-color: $gray;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 25px;
+          top: -10px;
+          width: 20px;
+          height: 20px;
+          transform: rotate(45deg);
+          background-color: $gray;
+        }
+      > li {
+        margin: 15px;
+        position: relative;
+        transition: 0.5s;
+        &:hover {
+          font-weight: bold;
+        }
+      }
+      > img {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        bottom: 0;
+        height: 300px;
+        
+      }
+    }
+    }
+  }
+}
+
+// 1100px
+@media only screen and (max-width: 1100px) {
+  
+}

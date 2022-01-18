@@ -19,6 +19,7 @@ body {
   font-family: "Graphik";
   font-size: 14px;
   line-height: 1.5;
+  min-width: 500px;
 }
 .innerContainer {
   max-width: 1400px;
