@@ -19,7 +19,7 @@ header {
       height: 25px;
     }
   }
-  nav.innerContainer {
+  .innerContainer {
     align-items: center;
     height: 70px;
     display: flex;
@@ -42,46 +42,46 @@ header {
           }
         }
       }
-      .subMenu {
-        transition: 0.5s;
-        line-height: 1.5;
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 70px;
-        padding: 30px 10px;
-        height: 300px;
-        width: 600px;
-        color: $navy;
-        background-color: $gray;
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 25px;
-          top: -10px;
-          width: 20px;
-          height: 20px;
-          transform: rotate(45deg);
-          background-color: $gray;
-        }
-        > li {
-          margin: 15px;
-          position: relative;
-          transition: 0.5s;
-          &:hover {
-            font-weight: bold;
-          }
-        }
-        > img {
-          position: absolute;
-          right: 0;
-          z-index: 1;
-          bottom: 0;
-          height: 300px;
-          
-        }
+    }
+  }
+  .subMenu {
+    transition: 0.5s;
+    line-height: 1.5;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    padding: 30px 10px;
+    height: 300px;
+    width: 600px;
+    color: $navy;
+    background-color: $gray;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 25px;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      background-color: $gray;
+    }
+    > li {
+      margin: 15px;
+      position: relative;
+      transition: 0.5s;
+      &:hover {
+        font-weight: bold;
       }
+    }
+    > img {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      bottom: 0;
+      height: 300px;
+      
     }
   }
   #smallViewMenu {
@@ -122,7 +122,7 @@ header {
 // 1100px
 @media only screen and (max-width: 1100px) {
   header {
-    nav.innerContainer {
+    .innerContainer {
       > ul {
         > li:hover {
           ul.subMenu {
@@ -130,24 +130,25 @@ header {
           }
         }
       }
-      #desktopViewMenu {
-        display: none;
-      }
-      #smallViewMenu {
+    }
+    #desktopViewMenu {
+      display: none;
+    }
+    #smallViewMenu {
+      display: block;
+      svg {
         display: block;
-        svg {
-          display: block;
-        }
       }
     }
   }
 }
 
-// 800px 
 @media only screen and (max-width: 800px) {
-  nav.innerContainer {
-    > ul:not(:last-child) {
-      display: none;
+  header {
+    .innerContainer {
+      > ul:not(:last-child) {
+        display: none;
+      }
     }
     #smallViewMenu {
       .mobileMenu {

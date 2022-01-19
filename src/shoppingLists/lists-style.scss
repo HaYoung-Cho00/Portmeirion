@@ -1,9 +1,7 @@
-$gray: #ECE9E5;
-$navy: #333E48;
-
 #lists {
   margin: 150px auto 100px;
   width: 100%;
+  border-collapse: collapse;
   .qty {
     display: flex;
     margin-top: 27px;
@@ -15,7 +13,10 @@ $navy: #333E48;
     }
   }
   th {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  td {
+    padding: 20px;
   }
   thead {
     text-align: left;
@@ -26,7 +27,7 @@ $navy: #333E48;
       &:nth-child(1) {
         th {
           font-size: 30px;
-          border-bottom: 1px solid $gray;
+          border-bottom: 1px solid var(--gray);
           padding-bottom: 50px;
         }
       }
@@ -39,6 +40,8 @@ $navy: #333E48;
   }
   tbody {
     padding: 30px 0;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 10px;
     tr{
       td:nth-child(1) {
         width: 10%;
@@ -47,25 +50,43 @@ $navy: #333E48;
         width: 15%;
       }
     }
-    input {
-      border: 1px solid $gray;
-      padding: 5px;
-      text-align: center;
-      outline: none;
-      width: 50px;
-      height: 50px;
+  }
+  tfoot {
+    th {
+      text-align: left;
+      padding: 20px;
     }
   }
-  td {
-    padding: 20px;
-  }
   button {
-    background-color: $navy;
-    border: none;
-    outline: none;
-    color: $gray;
-    padding: 1em 2em;
     float: right;
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  input {
+    border: 1px solid var(--gray);
+    padding: 5px;
+    text-align: center;
+    outline: none;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #lists {
+      th {
+    font-size: 16px;
+    }
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    input {
+      width: 35px;
+      height: 35px;
+    }
   }
 }

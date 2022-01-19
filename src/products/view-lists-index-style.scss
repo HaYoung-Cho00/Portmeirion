@@ -18,7 +18,7 @@
     justify-content: space-between;
   }
   #mobileSearchBox {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -29,7 +29,8 @@
       align-items: center;
     }
     #mobileSearchBox {
-      opacity: 1;
+      display: flex
+      ;
     }
   }
 }

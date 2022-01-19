@@ -2,36 +2,48 @@ $gray: #ECE9E5;
 $navy: #333E48;
 
 #create {
-  // background-color: $gray;
   table {
     width: 80%;
     margin: 150px auto;
     display: flex;
-    // background-color: $navy;
     flex-direction: column;
     align-items: center;
-    thead {
-      border-bottom: 1px solid $navy;
-      width: 80%;
-      th {
-        font-size: 30px;
-        padding: 30px;
-        text-align: left;
-
+  }
+  thead {
+    border-bottom: 1px solid $gray;
+    width: 100%;
+    th {
+      font-size: 30px;
+      padding: 30px;
+      text-align: left;
+    }
+  }
+  tbody {
+    th {
+      font-size: 20px;
+    }
+    tr {
+      display: flex;
+      margin: 40px 0;
+      > td {
+        display: flex;
+        flex-direction: column;
+        &:first-child {
+          margin-right: 70px;
+        }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #create {
     tbody {
-      th {
-        font-size: 20px;
-      }
       tr {
-        display: flex;
-        margin: 40px 0;
+        display: block;
         > td {
-          display: flex;
-          flex-direction: column;
           &:first-child {
-            margin-right: 70px;
+            margin-right: 0;
           }
         }
       }

@@ -1,6 +1,6 @@
 import './login-style.scss';
 import { Link } from 'react-router-dom'
-import Button from './Button';
+import Button from '../include/Button';
 import Input from './Input';
 
 function Login() {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './lists-style.scss';
+import Button from '../include/Button'
 
 function Lists() {
   return (
@@ -51,7 +52,7 @@ function Lists() {
           <th>$1800</th>
         </tr>
         <tr>
-          <td colSpan='5'><button>CHECKOUT</button></td>
+          <td colSpan='5'><Button>CHECKOUT</Button></td>
         </tr>
       </tfoot>
     </table>

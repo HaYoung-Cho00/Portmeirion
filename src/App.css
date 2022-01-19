@@ -23,3 +23,7 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
+:root {
+  --gray: #ECE9E5;
+  --navy: #333E48;
+}
