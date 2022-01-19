@@ -1,13 +1,14 @@
 import './main-style.scss';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { BsCircleFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 function Main() {
   return(
     <div id="main">
-      <section>
-        <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
+      <section id='visual'>
       </section>
+      <section id='newBG'></section>
       <section className="innerContainer">
         <article id="new">
           <div className="textArea">
@@ -15,21 +16,28 @@ function Main() {
             <p>We think you'll love these</p>
           </div>
           <div id="newItems">
-            <IoIosArrowBack id='leftArrow' />
-            <IoIosArrowForward id='rightArrow' />
-            <div>
+            <IoIosArrowBack className='arrows' id='leftArrow' />
+            <IoIosArrowForward className='arrows' id='rightArrow' />
+            <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
               </p>
             </div>
-            <img className='toProduct' src="http://via.placeholder.com/300X400" alt='collectionImage' />
-            <div>
+            <img className='toProduct' src="./img/main/BestSeller1.jpg" alt='collectionImage' />
+            <div id='newDesc2'>
               <p>
               A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
               </p>
+              <button>Read More</button>
             </div>
+            <h3 className='toProduct'>BOTANIC GARDEN</h3>
+            <ul id='mobileSilder'>
+              <li><BsCircleFill /></li>
+              <li><BsCircleFill /></li>
+              <li><BsCircleFill /></li>
+              <li><BsCircleFill /></li>
+            </ul>
           </div>
-          <h3 className='toProduct'>BOTANIC GARDEN</h3>
         </article>
         <article id="collections">
           <div className="textArea">
@@ -37,7 +45,7 @@ function Main() {
             <p>Discover the art of the everyday</p>
           </div>
           <div id='gallery'>
-            <img className='toProduct' id='coll1' src='http://via.placeholder.com/350X500' alt='collections'></img>
+            <img className='toProduct' id='coll1' src='./img/main/Collection1.jpg' alt='collections' />
             <div id='desc1' className='desc'>
               <h1>Collection Name1</h1>
               <p>
@@ -50,7 +58,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll2' src='http://via.placeholder.com/710X500' alt='collections'></img>
+            <img className='toProduct' id='coll2' src='./img/main/Collection2.jpg' alt='collections' />
             <div id='desc2' className='desc'>
               <h1>Collection Name2</h1>
               <p>
@@ -63,7 +71,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll3' src='http://via.placeholder.com/760X300' alt='collections'></img>
+            <img className='toProduct' id='coll3' src='./img/main/Collection3.jpg' alt='collections' />
             <div id='desc3' className='desc'>
               <h1>Collection Name3</h1>
               <p>
@@ -90,7 +98,7 @@ function Main() {
           </div>
           <ul>
             <li>
-              <img className='toProduct' src="http://via.placeholder.com/300X300" alt='bowl' />
+              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/3pcserver1.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name1</h3></li>
                 <li>Temporibus autem quibusdam et aut officiis debitis.</li>
@@ -98,7 +106,7 @@ function Main() {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="http://via.placeholder.com/300X300" alt='bowl' />
+              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/arborsp3.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name2</h3></li>
                 <li>Ecessitatibus saepe eveniet ut et voluptates repudiandae.</li>
@@ -106,7 +114,7 @@ function Main() {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="http://via.placeholder.com/300X300" alt='bowl' />
+              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/Floret_12pc_Set_Gray_51188.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name3</h3></li>
                 <li>Aut perferendis doloribus asperiores repellat.</li>
@@ -114,7 +122,7 @@ function Main() {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="http://via.placeholder.com/300X300" alt='bowl' />
+              <img className='toProduct' src="./img/items/botanic-garden/Botanicgarden_4pc_Set21_1.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name4</h3></li>
                 <li>Rerferendis autem quibusdam et au repellat.</li>
