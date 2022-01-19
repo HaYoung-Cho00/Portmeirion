@@ -1,8 +1,9 @@
 $gray: #ECE9E5;
 $navy: #333E48;
 #searchBox {
-  width: 270px;
+  width: 300px;
   height: 600px;
+  padding-left: 10px;
   .selectType {
     border-bottom : 1px solid $gray;
     display: flex;
@@ -27,8 +28,21 @@ $navy: #333E48;
         width: 15px;
         float: right;
         height: 30px;
+        border: 1px solid $gray;
+        &:checked {
+          filter: grayscale(0.7) hue-rotate(24deg);
+        }
       }
     }
-
   }
+}
+
+@media only screen and (max-width: 1200px) {
+  #searchBox {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  
 }

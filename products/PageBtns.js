@@ -2,8 +2,10 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import styled from 'styled-components';
 
 const Ul = styled.ul`
-  width: 40%;
+  width: 100%;
   margin: 50px 0 100px;
+  display: flex;
+  justify-content: center;
   li {
     background-color: #ECE9E5;
     width: 50px;
@@ -12,6 +14,7 @@ const Ul = styled.ul`
     text-align: center;
     color: #333E48;
     transition: 0.5s;
+    margin-right: 10px;
     &:hover {
       background-color: #333E48;
       color: #ECE9E5;
@@ -21,6 +24,16 @@ const Ul = styled.ul`
     width: 20px;
     margin-top: 15px;
     height: 20px;
+  }
+  @media only screen and (max-width: 1200px) {
+    li {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+    }
+    svg {
+      margin-top: 10px;
+    }
   }
 `;
 

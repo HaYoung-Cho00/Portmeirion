@@ -1,6 +1,7 @@
 import './view-lists-index-style.scss'
 import SearchBox from './SearchBox'
 import Contents from './Contents'
+import MobileSearchBox from './MobileSearchBox';
 
 function ViewLists({title}) {
   return(
@@ -22,6 +23,7 @@ function ViewLists({title}) {
       </section>
       <section className='innerContainer contents'>
         <SearchBox />
+        <MobileSearchBox />
         <Contents />
       </section>
     </div>
