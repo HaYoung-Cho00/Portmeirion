@@ -11,7 +11,7 @@ function Header() {
       <nav className='innerContainer'>
         <h1><Link to='/'>Portmeirion</Link></h1>
         <ul>
-          <li><Link to='new'>New Arrival</Link>
+          <li><Link to='new'>New Arrivals</Link>
             <ul className='new subMenu'>
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>

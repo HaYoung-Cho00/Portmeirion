@@ -13,7 +13,7 @@
       display: block;
     }
   }
-  ul.options {
+  .options {
     border-bottom: 1px solid var(--gray);
     padding: 20px 0;
     // display: none;
@@ -38,5 +38,10 @@
 @media only screen and (max-width: 1200px) {
   #searchBox {
     width: 400px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #searchBox {
+    display: none;
   }
 }

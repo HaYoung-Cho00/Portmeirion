@@ -1,9 +1,6 @@
-$gray: #ECE9E5;
-$navy: #333E48;
-
 header {
   width: 100%;
-  background-color: $navy;
+  background-color: var(--navy);
   cursor: pointer;
   min-width: 500px;
   position: fixed;
@@ -24,7 +21,7 @@ header {
     height: 70px;
     display: flex;
     justify-content: space-between;
-    color: $gray;
+    color: var(--gray);
     h1 {
       padding-left: 20px;
     }
@@ -54,8 +51,8 @@ header {
     padding: 30px 10px;
     height: 300px;
     width: 600px;
-    color: $navy;
-    background-color: $gray;
+    color: var(--navy);
+    background-color: var(--gray);
     &::before {
       content: '';
       display: block;
@@ -65,7 +62,7 @@ header {
       width: 20px;
       height: 20px;
       transform: rotate(45deg);
-      background-color: $gray;
+      background-color: var(--gray);
     }
     > li {
       margin: 15px;
@@ -109,8 +106,8 @@ header {
         line-height: 4;
         width: 170px;
         padding: 20px;
-        background-color: $gray;
-        color: $navy;
+        background-color: var(--gray);
+        color: var(--navy);
       }
     }
   }

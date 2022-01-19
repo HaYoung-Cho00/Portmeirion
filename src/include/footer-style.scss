@@ -1,8 +1,5 @@
-$gray: #ECE9E5;
-$navy: #333E48;
-
 footer {
-  background-color: $gray;
+  background-color: var(--gray);
   height: 100%;
   padding: 80px 0;
   .innerContainer {
@@ -27,7 +24,7 @@ footer {
         position: relative;
         span {
           font-weight: bold;
-          color: $navy;
+          color: var(--navy);
         }
       }
     }
