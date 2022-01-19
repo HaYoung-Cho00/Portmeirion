@@ -3,11 +3,11 @@ import PageBtns from './PageBtns'
 
 function Contents() {
   return(
-    <ariticle id='contents'>
+    <article id='contents'>
       <ul>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li className='new'>NEW</li>
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
@@ -15,42 +15,42 @@ function Contents() {
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
         <li>
           <ul className='itemBox'>
-            <img src="http://via.placeholder.com/340X340" alt="products" />
+            <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
             <li><h3>Product Name</h3></li>
             <li>$120.99</li>
           </ul>
         </li>
       </ul>
       <PageBtns />
-    </ariticle>
+    </article>
   )
 }
 

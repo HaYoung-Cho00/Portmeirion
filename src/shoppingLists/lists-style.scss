@@ -2,8 +2,18 @@ $gray: #ECE9E5;
 $navy: #333E48;
 
 #lists {
-  margin-top: 100px;
+  margin: 150px auto 100px;
   width: 100%;
+  .qty {
+    display: flex;
+    margin-top: 27px;
+    align-items: center;
+    p {
+      cursor: pointer;
+      margin-left: 20px;
+      text-decoration: underline;
+    }
+  }
   th {
     font-size: 20px;
   }
@@ -16,12 +26,14 @@ $navy: #333E48;
       &:nth-child(1) {
         th {
           font-size: 30px;
-          border-bottom: 1px solid $navy;
+          border-bottom: 1px solid $gray;
           padding-bottom: 50px;
         }
       }
       &:nth-child(2) {
-
+        th {
+          padding:20px;
+        }
       }
     }
   }
@@ -35,14 +47,13 @@ $navy: #333E48;
         width: 15%;
       }
     }
-    input[type='checkbox'] {
-      width: 20px;
-      height: 20px;
-    }
-    input[type='number'] {
-      width: 60px;
+    input {
+      border: 1px solid $gray;
+      padding: 5px;
+      text-align: center;
       outline: none;
-      height: 25px;
+      width: 50px;
+      height: 50px;
     }
   }
   td {

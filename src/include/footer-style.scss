@@ -2,15 +2,16 @@ $gray: #ECE9E5;
 $navy: #333E48;
 footer {
   background-color: $gray;
-  height: 500px;
+  height: 100%;
+  padding: 80px 0;
+  // min-width: 500px;
   > div.innerContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .innerFooter {
-      margin-top: 80px;
-      width: 50%;
       display: flex;
+      justify-content: center;
     }
     #rightFooter {
       width: 50%;
@@ -18,6 +19,7 @@ footer {
         display: flex;
         justify-content: space-between;
         > li {
+          padding-left: 30px;
           width: 230px;
           line-height: 2.5;
           color: #555;
@@ -39,7 +41,6 @@ footer {
       }
     }
     #leftFooter {
-      width: 50%;
       align-items: center;
       > ul {
         width: 50%;
@@ -67,6 +68,52 @@ footer {
           position: absolute;
           right: 10px;
           top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  footer {
+    height: 100%;
+    padding-bottom: 30px;
+    >div.innerContainer {
+      flex-direction: column;
+      .innerFooter {
+        // width: 100%;
+      }
+      #leftFooter {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  footer {
+    > div.innerContainer {
+      #leftFooter {
+        flex-direction: column;
+        width: 60%;
+        > ul {
+          width: 100%;
+          margin-right: 0px;
+          margin-bottom: 30px;
+        }
+        > form {
+          width: 100%;
+          input {
+            width: 100%;
+          }
+        }
+      }
+      #rightFooter {
+        > ul {
+          flex-direction: column;
+          > li {
+            margin-bottom: 50px;
+          }
         }
       }
     }

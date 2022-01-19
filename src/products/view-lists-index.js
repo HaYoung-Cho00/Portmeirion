@@ -1,8 +1,9 @@
 import './view-lists-index-style.scss'
 import SearchBox from './SearchBox'
 import Contents from './Contents'
+import MobileSearchBox from './MobileSearchBox';
 
-function ViewLists() {
+function ViewLists({title}) {
   return(
     <div id='viewLists'>
       <section>
@@ -10,7 +11,7 @@ function ViewLists() {
       </section>
       <section className='innerContainer introHeader'>
         <div>
-          <h1>New Arrivals</h1>
+          <h1>{title}</h1>
           <p>
             Sophie Conran for Portmeirion is timeless and perfect 
             for every day life. Versatile and practical, the 
@@ -22,6 +23,7 @@ function ViewLists() {
       </section>
       <section className='innerContainer contents'>
         <SearchBox />
+        <MobileSearchBox />
         <Contents />
       </section>
     </div>

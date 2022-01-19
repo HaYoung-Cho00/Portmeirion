@@ -1,53 +1,55 @@
 $gray: #ECE9E5;
 $navy: #333E48;
 
-table#login {
-  border-collapse: collapse;
-  height: 600px;
-  margin: 100px auto;
+#userInfo {
   display: flex;
-  width: 700px;
-  flex-direction: column;
-  border: 1.5px solid $gray;
-  align-items: center;
-  justify-content: center;
-  thead {
-    border-bottom: 1.5px solid $navy;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    th {
-      text-align: center;
-      margin: 20px 0;
-      padding: 10px;
-      font-size: 28px;
+  article {
+    width: 100%;
+    margin-top: 50px;
+    &:first-child {
+      form {
+        border-right: 1px solid $gray;
+      }
     }
   }
-  tbody {
+  table {
+    width: 90%;
+    border-collapse: collapse;
+    height: 600px;
+    margin: 150px auto;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
-    input {
-      border: none;
-      border: 1px solid $gray;
-      width: 350px;
-      height: 40px;
-      padding: 0 10px;
-      outline: none;
-      margin-top: 10px;
-      margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    thead {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      tr:first-child {
+        th {
+          padding-bottom: 30px;
+          border-bottom: 1px solid $gray;
+          text-align: left;
+          font-size: 28px;
+        }
+      }
+      tr:nth-child(2) {
+        th {
+          font-size: 18px;
+          text-align: left;
+          padding: 30px 0 15px 0;
+        }
+      }
     }
-  }
-  tfoot {
-    tr {
+    tbody {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      margin-top: 30px;
     }
-    button {
-      background-color: $navy;
-      border: none;
-      color: $gray;
-      padding: 1em 3em;
-      margin: 20px;
+    tfoot {
+      tr {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }

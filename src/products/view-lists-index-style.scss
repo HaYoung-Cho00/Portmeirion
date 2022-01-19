@@ -1,5 +1,4 @@
 #viewLists {
-
   .introHeader{
     text-align: center;
     > div {
@@ -17,6 +16,20 @@
   .contents {
     display: flex;
     justify-content: space-between;
+  }
+  #mobileSearchBox {
+    opacity: 0;
+  }
+}
 
+@media only screen and (max-width: 700px) {
+  #viewLists {
+    .contents {
+      flex-direction: column;
+      align-items: center;
+    }
+    #mobileSearchBox {
+      opacity: 1;
+    }
   }
 }
