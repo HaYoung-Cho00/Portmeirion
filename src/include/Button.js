@@ -7,6 +7,7 @@ const Btn = styled.button`
   color: #ECE9E5;
   padding: 1em 3em;
   margin: 20px;
+  cursor: pointer;
 `
 
 function Button({children, type}) {

@@ -6,6 +6,12 @@ header {
   position: fixed;
   z-index: 1000;
   top: 0;
+  a {
+    color: var(--gray);
+    &:hover {
+      color:var(--gray)
+    }
+  }
   img {
     width: 270px;
   }
@@ -17,13 +23,16 @@ header {
     }
   }
   .innerContainer {
-    align-items: center;
     height: 70px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     color: var(--gray);
     h1 {
       padding-left: 20px;
+    }
+    > * {
+      margin-bottom: 0;
     }
     > ul {
       display: flex;

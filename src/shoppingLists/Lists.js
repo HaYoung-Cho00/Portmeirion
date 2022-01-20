@@ -1,6 +1,7 @@
 import React from 'react';
 import './lists-style.scss';
 import Button from '../include/Button'
+import Quantity from '../include/Quantity';
 
 function Lists() {
   return (
@@ -21,8 +22,9 @@ function Lists() {
         <tr>
           <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
           <td><a href='#'>Product Name</a></td>
-          <td className='qty'><input type='number' defaultValue={1} />
-          <p>Delete</p>
+          <td className='qty'>
+            <Quantity />
+            <p>Delete</p>
           </td>
           <td>$200</td>
           <td>$800</td>
@@ -30,8 +32,9 @@ function Lists() {
         <tr>
           <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
           <td><a href='#'>Product Name</a></td>
-          <td className='qty'><input type='number' defaultValue={1} />
-          <p>Delete</p>
+          <td className='qty'>
+            <Quantity />
+            <p>Delete</p>
           </td>
           <td>$200</td>
           <td>$400</td>
@@ -39,8 +42,9 @@ function Lists() {
         <tr>
           <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
           <td><a href='#'>Product Name</a></td>
-          <td className='qty'><input type='number' defaultValue={1} />
-          <p>Delete</p>
+          <td className='qty'>
+            <Quantity />
+            <p>Delete</p>
           </td>
           <td>$200</td>
           <td>$600</td>

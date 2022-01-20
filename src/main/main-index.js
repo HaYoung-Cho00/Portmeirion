@@ -1,12 +1,77 @@
 import './main-style.scss';
+import 'antd/dist/antd.css';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { BsCircleFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import ProductSlider from '../include/ProductSlider';
+import { Carousel } from 'antd';
+import styled from 'styled-components';
 
+const SliderStyle = styled.h3`
+  height: 700px;
+  background: url('./img/main/slider/slider1.jpg') no-repeat center;
+  background-size: cover;
+  @media only screen and (max-width: 1060px) {
+    height: 600px;
+    background-size: cover
+  }
+  @media only screen and (max-width: 900px) {
+    height: 500px;
+  }
+  @media only screen and (max-width: 750px) {
+    height: 450px;
+  }
+  @media only screen and (max-width: 690px) {
+    height: 400px;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 350px;
+  }
+`
 function Main() {
   return(
     <div id="main">
       <section id='visual'>
+      <Carousel autoplay>
+        <div>
+          <SliderStyle />
+        </div>
+        <div>
+          <SliderStyle />
+          {/* <h3 style={{
+            height: "700px",
+            background: "url('./img/main/slider/slider2.jpg') no-repeat center"
+          }} /> */}
+
+        </div>
+        {/* <div>
+          <h3 
+            style={{
+            height: "700px",
+            background: "url('./img/main/slider/Visual.jpg') no-repeat center",
+            backgroundSize: "cover",
+            }}
+          />
+        </div>
+        <div>
+          <h3 
+            style={{
+            height: "700px",
+            background: "url('./img/main/slider/slider1.jpg') no-repeat center",
+            backgroundSize: "cover"
+          }}
+          />
+        </div>
+        <div>
+          <h3 
+            style={{
+            height: "700px",
+            background: "url('./img/main/slider/slider2.jpg') no-repeat center",
+            backgroundSize: "cover"
+          }}
+          />
+        </div> */}
+      </Carousel>
       </section>
       <section id='newBG'></section>
       <section className="innerContainer">
@@ -51,9 +116,7 @@ function Main() {
               <p>
                 Temporibus autem quibusdam et aut officiis debitis 
                 aut rerum necessitatibus saepe eveniet ut et voluptates 
-                repudiandae sint et Itaque earum rerum hic tenetur a sapiente 
-                delectus, At vero ntorustinctio. Nam libero tempore, cum soluta 
-                nobis est eligendi ut aut reiciendis voluptatibus maiores alias 
+                repudiandae sint et Itaque earum rerum hic tenetur a s ut aut reiciendis voluptatibus maiores alias 
                 consequatur aut perferendis doloribus asperiores repellat.
               </p>
               <button>Click The Image To Read More</button>
@@ -75,12 +138,8 @@ function Main() {
             <div id='desc3' className='desc'>
               <h1>Collection Name3</h1>
               <p>
-                At vero qui animi, id est assumenda est, omnis dolor repellendus. 
-                Temporibus autem quibusdam et aut officiis debitis aut rerum 
-                necessitatibus saepe eveniet ut et voluptates repudiandae sint et 
-                molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente 
-                delectus, ut aut reiciendis voluptatibus maiores alias consequatur 
-                aut perferendis doloribus asperiores repellat.
+                At vero qui animi, id eessist assumenda est, omnis dolor repellendus. dolor repellendus. 
+                Temporibus saepeniet ut et voluptates repudiandoloribus asessiperiores repellat.
               </p>
               <button>Click The Image To Read More</button>
             </div>
@@ -91,46 +150,11 @@ function Main() {
             </Link>
           </div>
         </article>
-        <article id='recommendation'>
-          <div className="textArea">
-            <h1>PICKED FOR YOU</h1>
-            <p>Treat yourself. Treat a friend. Treat a loved one.</p>
-          </div>
-          <ul>
-            <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/3pcserver1.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name1</h3></li>
-                <li>Temporibus autem quibusdam et aut officiis debitis.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-            <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/arborsp3.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name2</h3></li>
-                <li>Ecessitatibus saepe eveniet ut et voluptates repudiandae.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-            <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/Floret_12pc_Set_Gray_51188.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name3</h3></li>
-                <li>Aut perferendis doloribus asperiores repellat.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-            <li>
-              <img className='toProduct' src="./img/items/botanic-garden/Botanicgarden_4pc_Set21_1.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name4</h3></li>
-                <li>Rerferendis autem quibusdam et au repellat.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-          </ul>
-        </article>
+        <div className="textArea">
+          <h1>PICKED FOR YOU</h1>
+          <p>Treat yourself. Treat a friend. Treat a loved one.</p>
+        </div>
+        <ProductSlider id='recommendation' />
       </section>
     </div>
   )

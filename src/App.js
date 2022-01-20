@@ -7,6 +7,7 @@ import Login from './login/Login';
 import Lists from './shoppingLists/Lists';
 import { Routes, Route } from 'react-router-dom'
 import SignUp from './login/SignUp';
+import ProductDetailView from './include/ProductDetailView';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Lists />} />
         <Route path='/login/signup' element={<SignUp />} />
+        <Route path='/product/:id' element={<ProductDetailView />} />
       </Routes>
+        {/* <ProductDetailView /> */}
       <Footer></Footer>
     </div>
   );

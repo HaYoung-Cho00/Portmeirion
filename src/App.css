@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+:root {
+  --gray: #ECE9E5;
+  --navy: #333E48;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'PT Serif', serif;
 }
 a {
   text-decoration: none;
@@ -15,15 +20,11 @@ body {
   width: 100%;
   min-width: 500px;
   margin: 0 auto;
-  font-family: 'PT Serif', serif;
   font-size: 14px;
   line-height: 1.5;
+  color: inherit;
 }
 .innerContainer {
   max-width: 1400px;
   margin: 0 auto;
-}
-:root {
-  --gray: #ECE9E5;
-  --navy: #333E48;
 }
