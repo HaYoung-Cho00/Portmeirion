@@ -16,7 +16,7 @@ function Header() {
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>
               <li>Botanic Garden Harmony Accents</li>
-              <li>Botanic Garden Harmony Bakeware</li>
+              <li>Sara Miller London</li>
               <li>Botanic Garden Harmony Papilio</li>
               <li>Sophie Conran Floret & Arbor</li>
               <img src="./img/header/new.jpg" alt='collectionPicture'/>
@@ -27,7 +27,7 @@ function Header() {
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>
               <li>Botanic Garden Harmony Accents</li>
-              <li>Botanic Garden Harmony Bakeware</li>
+              <li>Sara Miller London</li>
               <li>Botanic Garden Harmony Papilio</li>
               <li>Sophie Conran Floret & Arbor</li>
               <img src="./img/header/collection.jpg" alt='collectionPicture'/>
