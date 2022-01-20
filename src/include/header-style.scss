@@ -128,6 +128,7 @@ header {
 // 1100px
 @media only screen and (max-width: 1100px) {
   header {
+    
     .innerContainer {
       > ul {
         > li:hover {
@@ -145,12 +146,26 @@ header {
       svg {
         display: block;
       }
+      a {
+        color: var(--navy);
+        &:hover {
+          color:var(--navy)
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: 800px) {
   header {
+    ul {
+      a {
+        color: var(--navy);
+        &:hover {
+          color:var(--navy)
+        }
+      }
+    }
     .innerContainer {
       > ul:not(:last-child) {
         display: none;

@@ -34,7 +34,7 @@ function SearchBox() {
           <li>Botanic Garden <input type='checkbox' /></li>
           <li>Botanic Garden Bouquet <input type='checkbox' /></li>
           <li>Botanic Garden Harmony Accents <input type='checkbox' /></li>
-          <li>Botanic Garden Harmony Bakeware <input type='checkbox' /></li>
+          <li>Sara Miller London <input type='checkbox' /></li>
           <li>Botanic Garden Harmony Papilio <input type='checkbox' /></li>
           <li>Sophie Conran Floret & Arbor <input type='checkbox' /></li>
         </ul>

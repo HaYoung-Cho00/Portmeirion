@@ -7,9 +7,10 @@ import ProductSlider from '../include/ProductSlider';
 import { Carousel } from 'antd';
 import styled from 'styled-components';
 
-const SliderStyle = styled.h3`
+function createSlider(url, style) {
+  const Slider = styled.h3`
+  background: url(${url}) no-repeat center;
   height: 700px;
-  background: url('./img/main/slider/slider1.jpg') no-repeat center;
   background-size: cover;
   @media only screen and (max-width: 1060px) {
     height: 600px;
@@ -27,50 +28,28 @@ const SliderStyle = styled.h3`
   @media only screen and (max-width: 600px) {
     height: 350px;
   }
-`
+  `
+  return Slider
+}
+
+const Slider1 = createSlider('./img/main/slider/Visual.jpg')
+const Slider2 = createSlider('./img/main/slider/slider1.jpg')
+const Slider3 = createSlider('./img/main/slider/slider2.jpg')
+
 function Main() {
   return(
     <div id="main">
       <section id='visual'>
-      <Carousel autoplay>
+      <Carousel autoplay={2000}>
         <div>
-          <SliderStyle />
+          <Slider1></Slider1>
         </div>
         <div>
-          <SliderStyle />
-          {/* <h3 style={{
-            height: "700px",
-            background: "url('./img/main/slider/slider2.jpg') no-repeat center"
-          }} /> */}
-
-        </div>
-        {/* <div>
-          <h3 
-            style={{
-            height: "700px",
-            background: "url('./img/main/slider/Visual.jpg') no-repeat center",
-            backgroundSize: "cover",
-            }}
-          />
+          <Slider2 />
         </div>
         <div>
-          <h3 
-            style={{
-            height: "700px",
-            background: "url('./img/main/slider/slider1.jpg') no-repeat center",
-            backgroundSize: "cover"
-          }}
-          />
+          <Slider3 />
         </div>
-        <div>
-          <h3 
-            style={{
-            height: "700px",
-            background: "url('./img/main/slider/slider2.jpg') no-repeat center",
-            backgroundSize: "cover"
-          }}
-          />
-        </div> */}
       </Carousel>
       </section>
       <section id='newBG'></section>
@@ -88,7 +67,7 @@ function Main() {
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
               </p>
             </div>
-            <img className='toProduct' src="./img/main/BestSeller1.jpg" alt='collectionImage' />
+            <img className='toProduct' src="./img/main/new/new1.jpg" alt='collectionImage' />
             <div id='newDesc2'>
               <p>
               A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
@@ -110,7 +89,7 @@ function Main() {
             <p>Discover the art of the everyday</p>
           </div>
           <div id='gallery'>
-            <img className='toProduct' id='coll1' src='./img/main/Collection1.jpg' alt='collections' />
+            <img className='toProduct' id='coll1' src='./img/main/gallery/Collection1.jpg' alt='collections' />
             <div id='desc1' className='desc'>
               <h1>Collection Name1</h1>
               <p>
@@ -121,7 +100,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll2' src='./img/main/Collection2.jpg' alt='collections' />
+            <img className='toProduct' id='coll2' src='./img/main/gallery/Collection2.jpg' alt='collections' />
             <div id='desc2' className='desc'>
               <h1>Collection Name2</h1>
               <p>
@@ -134,7 +113,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll3' src='./img/main/Collection3.jpg' alt='collections' />
+            <img className='toProduct' id='coll3' src='./img/main/gallery/Collection3.jpg' alt='collections' />
             <div id='desc3' className='desc'>
               <h1>Collection Name3</h1>
               <p>
