@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import ProductSlider from '../include/ProductSlider';
 import { Carousel } from 'antd';
 import styled from 'styled-components';
+import useAsync from '../hooks/useAsync'
+import axios from 'axios'
 
 function createSlider(url, style) {
   const Slider = styled.h3`
@@ -36,7 +38,27 @@ const Slider1 = createSlider('./img/main/slider/Visual.jpg')
 const Slider2 = createSlider('./img/main/slider/slider1.jpg')
 const Slider3 = createSlider('./img/main/slider/slider2.jpg')
 
+
+
+
+async function getCollections() {
+  const response = await axios.get('http://localhost:8080/collections')
+  return response.data
+}
+
 function Main() {
+  const state = useAsync(getCollections)
+  
+  const { loading, error, data: collections} = state
+  
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!collections) return null
+  console.log(collections[0])
+
+  const {collection:CN1, desc: CD1} = collections[0]
+  const {collection:CN2, desc: CD2} = collections[5]
+  const {collection:CN3, desc: CD3} = collections[3]
   return(
     <div id="main">
       <section id='visual'>
@@ -89,27 +111,27 @@ function Main() {
             <p>Discover the art of the everyday</p>
           </div>
           <div id='gallery'>
-            <img className='toProduct' id='coll1' src='./img/main/gallery/Collection1.jpg' alt='collections' />
+            <Link id='coll1' className='toProduct' to='collections' />
             <div id='desc1' className='desc'>
-              <h1>Botanic Garden</h1>
+              <h1>{CN1}</h1>
               <p>
-                A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
+                {CD1}
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll2' src='./img/main/gallery/Collection2.jpg' alt='collections' />
+            <Link id='coll2' className='toProduct' to='' />
             <div id='desc2' className='desc'>
-              <h1>Atrium</h1>
+              <h1>{CN2}</h1>
               <p>
-                Featuring a fresh mix of modern florals and geometric pattern a contemporary palette of green, purple and gold. Atrium creates a stunning mix and match table setting for any occasion.
+                {CD2}
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <img className='toProduct' id='coll3' src='./img/main/gallery/Collection3.jpg' alt='collections' />
+            <Link id='coll3' className='toProduct' to ='' />
             <div id='desc3' className='desc'>
-              <h1>Sophie ConRan</h1>
+              <h1>{CN3}</h1>
               <p>
-                Inspired by nature, Sophie Conran for Portmeirion range features two new silhouettes, Arbor & Floret. The graceful shapes and organic contours of this collection are designed to sit separately or together on the table.
+                {CD3}
               </p>
               <button>Click The Image To Read More</button>
             </div>
