@@ -91,34 +91,25 @@ function Main() {
           <div id='gallery'>
             <img className='toProduct' id='coll1' src='./img/main/gallery/Collection1.jpg' alt='collections' />
             <div id='desc1' className='desc'>
-              <h1>Collection Name1</h1>
+              <h1>Botanic Garden</h1>
               <p>
-                Temporibus autem quibusdam et aut officiis debitis 
-                aut rerum necessitatibus saepe eveniet ut et voluptates 
-                repudiandae sint et Itaque earum rerum hic tenetur a s ut aut reiciendis voluptatibus maiores alias 
-                consequatur aut perferendis doloribus asperiores repellat.
+                A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
               </p>
               <button>Click The Image To Read More</button>
             </div>
             <img className='toProduct' id='coll2' src='./img/main/gallery/Collection2.jpg' alt='collections' />
             <div id='desc2' className='desc'>
-              <h1>Collection Name2</h1>
+              <h1>Atrium</h1>
               <p>
-                At vero ntorustinctio. Nam libero tempore, cum soluta nobis est 
-                eligendi aut officiis debitis aut rerum necessitatibus saepe 
-                eveniet ut et voluptates repudiandae sint et molestiae non 
-                recusandae. Itaque earum rerum hic tenetur a sapiente delectus, 
-                ut aut reiciendis voluptatibus maiores alias consequatur aut 
-                perferendis doloribus asperiores repellat.
+                Featuring a fresh mix of modern florals and geometric pattern a contemporary palette of green, purple and gold. Atrium creates a stunning mix and match table setting for any occasion.
               </p>
               <button>Click The Image To Read More</button>
             </div>
             <img className='toProduct' id='coll3' src='./img/main/gallery/Collection3.jpg' alt='collections' />
             <div id='desc3' className='desc'>
-              <h1>Collection Name3</h1>
+              <h1>Sophie ConRan</h1>
               <p>
-                At vero qui animi, id eessist assumenda est, omnis dolor repellendus. dolor repellendus. 
-                Temporibus saepeniet ut et voluptates repudiandoloribus asessiperiores repellat.
+                Inspired by nature, Sophie Conran for Portmeirion range features two new silhouettes, Arbor & Floret. The graceful shapes and organic contours of this collection are designed to sit separately or together on the table.
               </p>
               <button>Click The Image To Read More</button>
             </div>

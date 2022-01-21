@@ -1,14 +1,16 @@
 import React from 'react';
 
-function ProductBox(props) {
+function ProductBox({products}) {
   return (
     <li>
-      <ul className='itemBox'>
-        <img src="./img/items/botanic-garden-harmony-bakeware/BG_Harmony_Baking_Dish_with_Handle_1.jpg" alt="products" />
-        <li className='new'>NEW</li>
-        <li><h3>Product Name</h3></li>
-        <li>$120.99</li>
-      </ul>
+        {products.map((product, index) => (
+          <ul className='itemBox' key={product.id}>
+            <img src="./img/sara/mug.jpg" alt="products" />
+            <li className='new'>NEW</li>
+            <li><h3>{product.name}</h3></li>
+            <li>{product.price}</li>
+          </ul>
+        ))}
     </li>
   );
 }

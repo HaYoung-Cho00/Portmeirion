@@ -15,22 +15,22 @@ function Header() {
             <ul className='new subMenu'>
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>
-              <li>Botanic Garden Harmony Accents</li>
+              <li>Botanic Garden Harmony</li>
               <li>Sara Miller London</li>
-              <li>Botanic Garden Harmony Papilio</li>
+              <li>Atrium</li>
               <li>Sophie Conran Floret & Arbor</li>
-              <img src="./img/header/new.jpg" alt='collectionPicture'/>
+              <img src="./img/header/header1.jpg" alt='collectionPicture'/>
             </ul>
           </li>
           <li><Link to='collection'>Collections</Link>
             <ul className='collections subMenu'>
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>
-              <li>Botanic Garden Harmony Accents</li>
+              <li>Botanic Garden Harmony</li>
               <li>Sara Miller London</li>
-              <li>Botanic Garden Harmony Papilio</li>
+              <li>Atrium</li>
               <li>Sophie Conran Floret & Arbor</li>
-              <img src="./img/header/collection.jpg" alt='collectionPicture'/>
+              <img src="./img/header/header2.jpg" alt='collectionPicture'/>
             </ul>
           </li>
           <li>About Us</li>

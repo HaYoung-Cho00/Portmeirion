@@ -3,16 +3,15 @@ import styled from 'styled-components';
 import { GoTriangleDown } from 'react-icons/go'
 
 const SearchBox = styled.aside`
-
   $gray: #ECE9E5;
   $navy: #333E48;
-
   display: flex;
   width: 100%;
-  height: 30px;
-  border-bottom: 1px solid #ECE9E5;
+  height: 40px;
+  border-bottom: 1px solid var(--gray);
   justify-content: space-between;
-  // margin-bottom: 200px;
+  align-items: center;
+  margin-bottom: 200px;
   > div {
     width: 33%;
     position: relative;
@@ -28,15 +27,18 @@ const SearchBox = styled.aside`
   }
   .options {
     position: absolute;
-    display: none;
+    display: block;
     width: 92%;
     left: 5px;
     line-height: 2;
     font-size: 12px;
     padding-top: 20px;
+    margin-bottom: 30px;
+    height: 60px;
+    padding-bottom: 50px;
     input[type='checkbox'] {
       float: right;
-      margin-top: 8px;
+      margin-top: 5px;
     }
   }
 `

@@ -53,24 +53,24 @@ const DetailViewSection = styled.section`
   }
 `
 
-function ProductDetailView(props) {
+function ProductDetailView() {
   return (
     <DetailViewSection className='innerContainer'>
       <article>
-        <aside><img src='./img/detail/RScomponents_5.jpg' alt='product' /></aside>
+        <aside><img src='./img/sophie/floretset.jpg' alt='product' /></aside>
         <aside>
           <div>
-            <h1>Product Name</h1>
+            <h1>Botanic Garden Harmony Papilio Amber 8.5 Inch Salad Plate (Venus Fly Trap)</h1>
             <h3>Description</h3>
             <p>
-              descriptiondescriptiondescriiondescription
+              Botanic Garden Harmony Papilio features archival floral motifs and butterflies complementing the colorways of Botanic Garden Harmony. Mix and match to create personalized tablesettings. The Botanic Garden Harmony Papilio Amber 8.5 inch salad plate features the venus fly trap motif on a white ground. The plate features an embossed laurel leaf border reminiscent of the iconic Botanic Garden design. Made for everyday living, this collection is dishwasher, microwave, oven and freezer safe.
             </p>
           </div>
           <div id='order'>
             <label htmlFor='qty'>
               Quantity: <Quantity />
             </label>
-              <Button>ADD TO CART - $299.99</Button>
+              <Button>ADD TO CART - $28.99</Button>
           </div>
         </aside>
       </article>

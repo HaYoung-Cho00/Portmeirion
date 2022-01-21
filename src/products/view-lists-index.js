@@ -1,11 +1,27 @@
 import './view-lists-index-style.scss'
 import SearchBox from './SearchBox'
 import Contents from './Contents'
-import MobileSearchBox from './MobileSearchBox';
+import MobileSearchBox from './MobileSearchBox'
+import useAsync from '../hooks/useAsync'
+import axios from 'axios'
+
+async function getProducts() {
+  const response = await axios.get('http://localhost:8080/new')
+  return response.data
+}
 
 function ViewLists({title}) {
+  const state = useAsync(getProducts)
+
+  const { loading, error, data: products} = state
+
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!products) return null
+
+
   return(
-    <div id='viewLists'>
+    <div className='viewLists'>
       <section>
         <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
       </section>
@@ -13,18 +29,14 @@ function ViewLists({title}) {
         <div>
           <h1>{title}</h1>
           <p>
-            Sophie Conran for Portmeirion is timeless and perfect 
-            for every day life. Versatile and practical, the 
-            collection features the look of being hand thrown with 
-            each piece being beautifully tactile. Explore our 
-            beautiful tableware, glassware and home accessories.
+            Shop the latest additions in dinnerware sets at Portmeirion. Browse our new arrivals from plates, bowls, cups and more here!
           </p>
         </div>
       </section>
       <section className='innerContainer contents'>
         <SearchBox />
         <MobileSearchBox />
-        <Contents />
+        <Contents products={products} />
       </section>
     </div>
   );

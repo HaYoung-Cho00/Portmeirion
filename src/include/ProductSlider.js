@@ -63,7 +63,7 @@ function ProductSlider(props) {
           
           <ul>
             <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/3pcserver1.jpg" alt='bowl' />
+              <img className='toProduct' src="./img/sophie/3pcserver.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name1</h3></li>
                 <li>Temporibus autem quibusdam et aut officiis debitis.</li>
@@ -71,7 +71,7 @@ function ProductSlider(props) {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/arborsp3.jpg" alt='bowl' />
+              <img className='toProduct' src="./img/sophie/arborbowl.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name2</h3></li>
                 <li>Ecessitatibus saepe eveniet ut et voluptates repudiandae.</li>
@@ -79,7 +79,7 @@ function ProductSlider(props) {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="./img/items/sophie-conran-floret&arbor/Floret_12pc_Set_Gray_51188.jpg" alt='bowl' />
+              <img className='toProduct' src="./img/sophie/arbormug.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name3</h3></li>
                 <li>Aut perferendis doloribus asperiores repellat.</li>
@@ -87,7 +87,7 @@ function ProductSlider(props) {
               </ul>
             </li>
             <li>
-              <img className='toProduct' src="./img/items/botanic-garden/Botanicgarden_4pc_Set21_1.jpg" alt='bowl' />
+              <img className='toProduct' src="./img/sophie/arborservplate.jpg" alt='bowl' />
               <ul className='pickedDesc'>
                 <li><h3 className='toProduct'>Product Name4</h3></li>
                 <li>Rerferendis autem quibusdam et au repellat.</li>

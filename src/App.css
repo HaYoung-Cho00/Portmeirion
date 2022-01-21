@@ -28,3 +28,17 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
+.introHeader{
+  text-align: center;
+}
+.introHeader > div {
+  margin: 100px 0;
+}
+.introHeader h1 {
+  font-size: 40px;
+}
+.introHeader p {
+     width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+}

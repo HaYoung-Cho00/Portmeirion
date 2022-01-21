@@ -8,6 +8,8 @@ import Lists from './shoppingLists/Lists';
 import { Routes, Route } from 'react-router-dom'
 import SignUp from './login/SignUp';
 import ProductDetailView from './include/ProductDetailView';
+import NewIndex from './newArrivals/NewIndex';
+import CollectionLists from './collections/CollectionLists';
 
 function App() {
   return (
@@ -15,14 +17,14 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/new' element={<ViewLists title='New Arrivals'/>} />
-        <Route path='/collection' element={<ViewLists title='Collections'/>} />
+        <Route path='/new' element={<NewIndex />} />
+        <Route path='/collection' element={<CollectionLists title='Collections'/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Lists />} />
         <Route path='/login/signup' element={<SignUp />} />
         <Route path='/product/:id' element={<ProductDetailView />} />
+        <Route path='/detailView' element={<ProductDetailView />} />
       </Routes>
-        {/* <ProductDetailView /> */}
       <Footer></Footer>
     </div>
   );
