@@ -1,0 +1,49 @@
+#create {
+  table {
+    width: 80%;
+    margin: 150px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  thead {
+    border-bottom: 1px solid var(--gray);
+    width: 100%;
+    th {
+      font-size: 30px;
+      padding: 30px;
+      text-align: left;
+    }
+  }
+  tbody {
+    th {
+      font-size: 20px;
+    }
+    tr {
+      display: flex;
+      margin: 40px 0;
+      > td {
+        display: flex;
+        flex-direction: column;
+        &:first-child {
+          margin-right: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #create {
+    tbody {
+      tr {
+        display: block;
+        > td {
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
