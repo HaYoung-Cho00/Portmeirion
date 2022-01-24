@@ -111,7 +111,7 @@ function Main() {
             <p>Discover the art of the everyday</p>
           </div>
           <div id='gallery'>
-            <Link id='coll1' className='toProduct' to='collections' />
+            <Link id='coll1' className='toProduct' to={`collection/${CN1}`} />
             <div id='desc1' className='desc'>
               <h1>{CN1}</h1>
               <p>
@@ -119,7 +119,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <Link id='coll2' className='toProduct' to='' />
+            <Link id='coll2' className='toProduct' to={`collection/${CN2}`} />
             <div id='desc2' className='desc'>
               <h1>{CN2}</h1>
               <p>
@@ -127,7 +127,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <Link id='coll3' className='toProduct' to ='' />
+            <Link id='coll3' className='toProduct' to={`collection/${CN3}`} />
             <div id='desc3' className='desc'>
               <h1>{CN3}</h1>
               <p>

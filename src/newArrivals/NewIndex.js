@@ -10,7 +10,7 @@ async function getProducts() {
   return response.data
 }
 
-function NewIndex({title}) {
+function NewIndex() {
   const state = useAsync(getProducts)
 
   const { loading, error, data: products} = state

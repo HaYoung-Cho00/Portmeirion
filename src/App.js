@@ -10,6 +10,7 @@ import SignUp from './login/SignUp';
 import ProductDetailView from './include/ProductDetailView';
 import NewIndex from './newArrivals/NewIndex';
 import CollectionLists from './collections/CollectionLists';
+import CollectionIndex from './collections/CollectionIndex';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/new' element={<NewIndex />} />
         <Route path='/collections' element={<CollectionLists title='Collections'/>} />
+        <Route path='/collection/:name' element={<CollectionIndex title='Collections'/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/login/signup' element={<SignUp />} />

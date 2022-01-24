@@ -43,7 +43,7 @@ function CollectionBox({collection}) {
       <div className='collectDesc'>
         <h1>{collection.collection}</h1>
         <p>{collection.desc}</p>
-        <Button><Link to='productLists'>Read More</Link></Button>
+        <Button><Link to={`/collection/${collection.collection}`}>Read More</Link></Button>
       </div>
     </CollectArticle>
   );
