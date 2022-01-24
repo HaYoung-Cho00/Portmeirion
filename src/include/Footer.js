@@ -1,4 +1,4 @@
-import './footer-style.scss';
+import './style/footer.scss';
 import {AiOutlineArrowRight, AiOutlineInstagram, AiFillFacebook} from 'react-icons/ai'
 function Footer() {
   return(

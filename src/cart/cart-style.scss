@@ -1,0 +1,90 @@
+#cart {
+  margin: 150px auto 100px;
+  width: 100%;
+  border-collapse: collapse;
+  a {
+    color: var(--navy);
+    &:hover {
+      color:var(--navy)
+    }
+  }
+  .qty {
+    display: flex;
+    margin-top: 27px;
+    align-items: center;
+    p {
+      cursor: pointer;
+      margin-left: 20px;
+      text-decoration: underline;
+    }
+  }
+  th {
+    font-size: 18px;
+  }
+  td {
+    padding: 20px;
+  }
+  thead {
+    text-align: left;
+    > tr {
+      th {
+        padding: 25px 0;
+      }
+      &:nth-child(1) {
+        th {
+          font-size: 30px;
+          border-bottom: 1px solid var(--gray);
+          padding-bottom: 50px;
+        }
+      }
+      &:nth-child(2) {
+        th {
+          padding:20px;
+        }
+      }
+    }
+  }
+  tbody {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 10px;
+    tr{
+      td:nth-child(1) {
+        width: 10%;
+      }
+      td:nth-child(2)  {
+        width: 15%;
+      }
+    }
+  }
+  tfoot {
+    th {
+      text-align: left;
+      padding: 20px;
+    }
+  }
+  button {
+    float: right;
+    margin-top: 30px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #lists {
+      th {
+    font-size: 16px;
+    }
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    input {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

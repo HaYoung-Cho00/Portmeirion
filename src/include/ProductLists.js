@@ -1,7 +1,7 @@
-import '../include/style/productLists.scss'
-import SearchBox from '../include/SearchBox'
-import Contents from '../include/Contents'
-import MobileSearchBox from '../include/MobileSearchBox'
+import './style/productLists.scss'
+import SearchBox from './SearchBox'
+import Contents from './Contents'
+import MobileSearchBox from './MobileSearchBox'
 import useAsync from '../hooks/useAsync'
 import axios from 'axios'
 
@@ -10,7 +10,7 @@ async function getProducts() {
   return response.data
 }
 
-function NewIndex({title}) {
+function ProductLists({title}) {
   const state = useAsync(getProducts)
 
   const { loading, error, data: products} = state
@@ -21,13 +21,13 @@ function NewIndex({title}) {
 
 
   return(
-    <div className='productLists'>
+    <div id='productLists' className='productLists'>
       <section>
         <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
       </section>
       <section className='innerContainer introHeader'>
         <div>
-          <h1>New Arrivals</h1>
+          <h1>{title}</h1>
           <p>
             Shop the latest additions in dinnerware sets at Portmeirion. Browse our new arrivals from plates, bowls, cups and more here!
           </p>
@@ -42,4 +42,4 @@ function NewIndex({title}) {
   );
 }
 
-export default NewIndex;
+export default ProductLists;

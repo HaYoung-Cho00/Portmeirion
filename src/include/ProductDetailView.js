@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 import styled from 'styled-components';
 import Quantity from './Quantity';
-import ProductSlider from './ProductSlider';
+import ProductSlider from './SquareSlider';
 
 const DetailViewSection = styled.section`
   margin-top: 150px;
@@ -53,7 +53,7 @@ const DetailViewSection = styled.section`
   }
 `
 
-function ProductDetailView() {
+function SquareSlider() {
   return (
     <DetailViewSection className='innerContainer'>
       <article>
@@ -82,4 +82,4 @@ function ProductDetailView() {
   );
 }
 
-export default ProductDetailView;
+export default SquareSlider;

@@ -1,4 +1,4 @@
-import './header-style.scss';
+import './style/header.scss';
 import { Link } from 'react-router-dom'
 import { RiMenuFill } from 'react-icons/ri'
 import { AiOutlineHeart, AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
