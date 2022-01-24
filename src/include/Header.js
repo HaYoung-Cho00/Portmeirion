@@ -22,7 +22,7 @@ function Header() {
               <img src="./img/header/header1.jpg" alt='collectionPicture'/>
             </ul>
           </li>
-          <li><Link to='collection'>Collections</Link>
+          <li><Link to='collections'>Collections</Link>
             <ul className='collections subMenu'>
               <li>Botanic Garden</li>
               <li>Botanic Garden Bouquet</li>

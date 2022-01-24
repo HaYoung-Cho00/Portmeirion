@@ -1,15 +1,8 @@
 import React from 'react';
-import Collection from './Collection';
+import CollectionBox from './CollectionBox';
 import styled from 'styled-components';
 import useAsync from '../hooks/useAsync'
 import axios from 'axios'
-
-async function getCollections() {
-  const response = await axios.get('http://localhost:8080/collections')
-  return response.data
-}
-
-
 
 const CollectSection = styled.section`
   .collectionLists {
@@ -26,6 +19,10 @@ const CollectSection = styled.section`
     }
   }
 `
+async function getCollections() {
+  const response = await axios.get('http://localhost:8080/collections')
+  return response.data
+}
 
 function CollectionLists(props) {
   const state = useAsync(getCollections)
@@ -49,7 +46,7 @@ function CollectionLists(props) {
       </section>
       <section className='innerContainer collectionLists'>
         {collections.map((collection) => (
-            <Collection key={collection.id} collection={collection} />
+            <CollectionBox key={collection.id} collection={collection} />
           ))}
       </section>
     </CollectSection>

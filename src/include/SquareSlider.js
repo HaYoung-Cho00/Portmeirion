@@ -57,7 +57,7 @@ const ProductSlides = styled.article`
     }
 `
 
-function ProductSlider(props) {
+function SquareSlider(props) {
   return (
 <ProductSlides>
           
@@ -99,4 +99,4 @@ function ProductSlider(props) {
   );
 }
 
-export default ProductSlider;
+export default SquareSlider;

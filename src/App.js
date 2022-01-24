@@ -18,12 +18,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/new' element={<NewIndex />} />
-        <Route path='/collection' element={<CollectionLists title='Collections'/>} />
+        <Route path='/collections' element={<CollectionLists title='Collections'/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/login/signup' element={<SignUp />} />
         <Route path='/product/:id' element={<ProductDetailView />} />
-        <Route path='/detailView' element={<ProductDetailView />} />
+        <Route path='/detailView/:id' element={<ProductDetailView />} />
       </Routes>
       <Footer></Footer>
     </div>

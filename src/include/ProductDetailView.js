@@ -2,14 +2,16 @@ import React from 'react';
 import Button from './Button';
 import styled from 'styled-components';
 import Quantity from './Quantity';
-import ProductSlider from './SquareSlider';
+import SquareSlider from './SquareSlider';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import useAsync from '../hooks/useAsync';
 
 const DetailViewSection = styled.section`
   margin-top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // height: 100vh;
   > div {
     text-align: center;
     margin: 150px 0;
@@ -25,14 +27,12 @@ const DetailViewSection = styled.section`
     
   }
   p {
-    font-size: 18px;
-    height: 200px;
+    font-size: 14px;
   }
   aside {
     width: 50%;
     display: flex;
     flex-direction: column;
-    height: 500px;
     justify-content: space-between;
     h1 {
       font-size: 40px;
@@ -53,33 +53,50 @@ const DetailViewSection = styled.section`
   }
 `
 
-function SquareSlider() {
+function ProductDetailView() {
+  const param = useParams()
+  const { id } = param
+
+  async function getProductDetails(){
+    const response = await axios.get(`http://localhost:8080/detailView/${id}`)
+    return response.data
+  }
+
+  const state = useAsync(getProductDetails)
+  
+  const { loading, error, data: productInfo} = state
+  console.log(productInfo)
+  
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!productInfo) return null
+
   return (
     <DetailViewSection className='innerContainer'>
       <article>
         <aside><img src='./img/sophie/floretset.jpg' alt='product' /></aside>
         <aside>
           <div>
-            <h1>Botanic Garden Harmony Papilio Amber 8.5 Inch Salad Plate (Venus Fly Trap)</h1>
+            <h1>{productInfo[0].name}</h1>
             <h3>Description</h3>
             <p>
-              Botanic Garden Harmony Papilio features archival floral motifs and butterflies complementing the colorways of Botanic Garden Harmony. Mix and match to create personalized tablesettings. The Botanic Garden Harmony Papilio Amber 8.5 inch salad plate features the venus fly trap motif on a white ground. The plate features an embossed laurel leaf border reminiscent of the iconic Botanic Garden design. Made for everyday living, this collection is dishwasher, microwave, oven and freezer safe.
+              {productInfo[0].desc}
             </p>
           </div>
           <div id='order'>
             <label htmlFor='qty'>
               Quantity: <Quantity />
             </label>
-              <Button>ADD TO CART - $28.99</Button>
+              <Button>ADD TO CART - {productInfo[0].price}</Button>
           </div>
         </aside>
       </article>
       <div>
         <h1>PEOPLE WHO VIEWED THIS ITEM ALSO VIEWED</h1>
-        <ProductSlider />
+        <SquareSlider />
       </div>
     </DetailViewSection>
   );
 }
 
-export default SquareSlider;
+export default ProductDetailView;

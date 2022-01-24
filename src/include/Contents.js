@@ -9,7 +9,7 @@ function Contents({products}) {
       <ul>
         {products.map((product, index) => (
           <li key={product.id}>
-              <Link to='/detailView'>
+              <Link to={`/detailView/${product.id}`}>
               <ul className='itemBox'>
                 <img src={`./img/${product.imgUrl}.jpg`} alt="products" />
                 <li className='new'>NEW</li>

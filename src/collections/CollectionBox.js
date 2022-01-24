@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../include/Button';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 const CollectArticle = styled.article`
   display: flex;
@@ -31,10 +32,9 @@ const CollectArticle = styled.article`
   }
 `
 
-function Collection({collection}) {
+function CollectionBox({collection}) {
   return (
     <CollectArticle>
-      {/* <img src={`./img/collections/${collection.imgUrl}.jpg`} alt='collection-image'/> */}
       <div id='img' style={{
         background: `url(./img/collections/${collection.imgUrl}.jpg) no-repeat no-repeat center`,
         backgroundSize: "cover",
@@ -43,10 +43,10 @@ function Collection({collection}) {
       <div className='collectDesc'>
         <h1>{collection.collection}</h1>
         <p>{collection.desc}</p>
-        <Button>Read More</Button>
+        <Button><Link to='productLists'>Read More</Link></Button>
       </div>
     </CollectArticle>
   );
 }
 
-export default Collection;
+export default CollectionBox;
