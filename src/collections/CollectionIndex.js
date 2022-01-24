@@ -12,6 +12,7 @@ function CollectionIndex(props) {
   
   const param = useParams()
   const { name } = param
+
   async function getCollectionLists() {
     const response = await axios.get(`http://localhost:8080/collection/${name}`)
     return response.data
@@ -20,23 +21,22 @@ function CollectionIndex(props) {
     const response = await axios.get(`http://localhost:8080/collectionInfo/${name}`)
     return response.data
   }
+
   const state = useAsync(getCollectionLists)
   const coll = useAsync(getCollectionInfo)
   
-  
-    const { loading, error, data: products} = state
-    const { data: collInfo} = coll
-    
-    if(loading) return <h1>Loading...</h1>
-    if(error) return <h1>Failed</h1>
-    if(!products) return null
-    if(!collInfo) return null
-    console.log(collInfo[0].id)
+  const { loading, error, data: products} = state
+  const { data: collInfo} = coll
+  console.log(products)
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!products) return null
+  if(!collInfo) return null
 
   return (
     <div className='productLists'>
       <section>
-        <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
+        <img src="./img/collections/banner.png" alt="mainImage" />
       </section>
       <section className='innerContainer introHeader'>
         <div>
@@ -48,7 +48,6 @@ function CollectionIndex(props) {
         <SearchBox />
         <MobileSearchBox />
         <Contents products={products} />
-        {/* <Contents /> */}
       </section>
     </div>
   );

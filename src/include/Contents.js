@@ -1,9 +1,27 @@
 import './style/contents.scss'
 import PageBtns from './PageBtns'
-import ProductBox from './ProductBox'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
+import useAsync from '../hooks/useAsync'
 
 function Contents({products}) {
+  const param = useParams()
+  
+  function getItem() {
+    const response = axios.get(`http://localhost:8080/collection/${param.name}`)
+    return response.data
+  }
+  
+  const state = useAsync(getItem)
+  
+  const { loading, error, data: items} = state
+  
+  
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!items) return null
+  
+  console.log(items)
   return(
     <article id='contents'>
       <ul>

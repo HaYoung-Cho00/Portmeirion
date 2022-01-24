@@ -51,6 +51,15 @@ const DetailViewSection = styled.section`
     font-size: 16px;
     padding: 1em 5em;
   }
+  @media only screen and (max-width: 1400px) {
+    aside {
+      width: 80%;
+    }
+    > article:first-child {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `
 
 function ProductDetailView() {
@@ -74,7 +83,9 @@ function ProductDetailView() {
   return (
     <DetailViewSection className='innerContainer'>
       <article>
-        <aside><img src='./img/sophie/floretset.jpg' alt='product' /></aside>
+        <aside>
+          <img src={`./img/${productInfo[0].inmgUrl}`} alt='product' />
+        </aside>
         <aside>
           <div>
             <h1>{productInfo[0].name}</h1>

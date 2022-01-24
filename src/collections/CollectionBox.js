@@ -14,27 +14,31 @@ const CollectArticle = styled.article`
   margin-bottom: 100px;
   #img {
     width: 60%;
-    // height: 400px;
   }
   .collectDesc {
     width: 40%;
-    padding: 20px;
-    // background-color: red;
+    padding: 0 20px;
     text-align:center;
-    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     h1 {
       font-size: 20px;
     }
+    p {
+      font-size: 13px;
+    }
+    a {
+      color: var(--gray)
+    }
   }
+
 `
 
 function CollectionBox({collection}) {
   return (
-    <CollectArticle>
+    <CollectArticle id='collArticle'>
       <div id='img' style={{
         background: `url(./img/collections/${collection.imgUrl}.jpg) no-repeat no-repeat center`,
         backgroundSize: "cover",

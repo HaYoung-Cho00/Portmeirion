@@ -23,7 +23,7 @@ function NewIndex() {
   return(
     <div className='productLists'>
       <section>
-        <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
+        <img src="./img/new/banner.png" alt="mainImage" />
       </section>
       <section className='innerContainer introHeader'>
         <div>

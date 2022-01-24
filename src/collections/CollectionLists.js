@@ -12,8 +12,9 @@ const CollectSection = styled.section`
     article {
       width: 48%;
     }
-    @media only screen and (max-width: 1350px) {
+    @media only screen and (max-width: 1230px) {
       .collectionLists {
+        display: flex;
         flex-direction: column;
       }
     }
@@ -36,12 +37,14 @@ function CollectionLists(props) {
   return (
     <CollectSection id='collectSection'>
       <section>
-        <img src="http://via.placeholder.com/1920X500" alt="mainImage" />
+        <img src="./img/collections/banner.png" alt="mainImage" />
       </section>
       <section className='innerContainer introHeader'>
         <div>
-          <h1>Collections</h1>
-          <p></p>
+          <h1>DISCOVER THE ART OF THE EVERYDAY</h1>
+          <p>
+            Taking inspiration from the beauty of nature, Portmeirion collections bring the outside in. It’s utterly distinctive, but built for the real world.
+          </p>
         </div>
       </section>
       <section className='innerContainer collectionLists'>
