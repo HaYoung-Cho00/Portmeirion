@@ -6,10 +6,9 @@ import Contents from '../include/Contents';
 import axios from 'axios';
 import useAsync from '../hooks/useAsync';
 import { useParams } from 'react-router-dom';
-
+import './collecIndex.scss'
 
 function CollectionIndex(props) {
-  
   const param = useParams()
   const { name } = param
 
@@ -36,7 +35,7 @@ function CollectionIndex(props) {
   return (
     <div className='productLists'>
       <section>
-        <img src="./img/collections/banner.png" alt="mainImage" />
+        <img src="./img/collections/banner.png" alt="banner" />
       </section>
       <section className='innerContainer introHeader'>
         <div>
