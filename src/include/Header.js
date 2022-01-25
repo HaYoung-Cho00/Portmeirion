@@ -4,7 +4,6 @@ import { RiMenuFill } from 'react-icons/ri'
 import { AiOutlineHeart, AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
 
 // li 목록들 받아와서 반복문 돌리기
-
 function Header() {
   return (
     <header>
@@ -12,26 +11,26 @@ function Header() {
         <h1><Link to='/'>Portmeirion</Link></h1>
         <ul>
           <li><Link to='new'>New Arrivals</Link>
-            <ul className='new subMenu'>
-              <li>Botanic Garden</li>
+            {/* <ul className='new subMenu'>
+              <li><Link to=''>Botanic Garden</Link></li>
               <li>Botanic Garden Bouquet</li>
               <li>Botanic Garden Harmony</li>
               <li>Sara Miller London</li>
               <li>Atrium</li>
               <li>Sophie Conran Floret & Arbor</li>
               <img src="./img/header/header1.jpg" alt='collectionPicture'/>
-            </ul>
+            </ul> */}
           </li>
           <li><Link to='collections'>Collections</Link>
-            <ul className='collections subMenu'>
-              <li>Botanic Garden</li>
-              <li>Botanic Garden Bouquet</li>
-              <li>Botanic Garden Harmony</li>
-              <li>Sara Miller London</li>
-              <li>Atrium</li>
-              <li>Sophie Conran Floret & Arbor</li>
+            {/* <ul className='collections subMenu'>
+              <li><Link to='collection/Botanic Garden'>Botanic Garden</Link></li>
+              <li><Link to='collection/Botanic Garden Bouquet'>Botanic Garden Bouquet</Link></li>
+              <li><Link to='collection/Botanic Garden Harmony'>Botanic Garden Harmony</Link></li>
+              <li><Link to='collection/Sara Miller London'>Sara Miller London</Link></li>
+              <li><Link to='collection/Atrium'>Atrium</Link></li>
+              <li><Link to='collection/Sophie Conran Floret & Arbor'>Sophie Conran Floret & Arbor</Link></li>
               <img src="./img/header/header2.jpg" alt='collectionPicture'/>
-            </ul>
+            </ul> */}
           </li>
           <li>About Us</li>
           <li>Contact Us</li>

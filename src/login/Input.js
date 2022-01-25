@@ -18,7 +18,7 @@ const InputField = styled.input`
 
 function Input({type, id}) {
   return (
-    <InputField id={id} type={type} />
+    <InputField id={id} type={type}/>
   );
 }
 

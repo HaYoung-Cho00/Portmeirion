@@ -2,16 +2,16 @@ import React from 'react';
 import Button from './Button';
 import styled from 'styled-components';
 import Quantity from './Quantity';
-import SquareSlider from './SquareSlider';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import useAsync from '../hooks/useAsync';
 
 const DetailViewSection = styled.section`
-  margin-top: 150px;
+  padding-top: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
   > div {
     text-align: center;
     margin: 150px 0;
@@ -74,12 +74,11 @@ function ProductDetailView() {
   const state = useAsync(getProductDetails)
   
   const { loading, error, data: productInfo} = state
-  console.log(productInfo)
   
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!productInfo) return null
-
+  console.log(productInfo)
   return (
     <DetailViewSection className='innerContainer'>
       <article>
@@ -102,10 +101,10 @@ function ProductDetailView() {
           </div>
         </aside>
       </article>
-      <div>
+      {/* <div>
         <h1>PEOPLE WHO VIEWED THIS ITEM ALSO VIEWED</h1>
-        <SquareSlider />
-      </div>
+        <SquareSlider  />
+      </div> */}
     </DetailViewSection>
   );
 }

@@ -27,7 +27,7 @@ function CollectionIndex(props) {
   
   const { loading, error, data: products} = state
   const { data: collInfo} = coll
-  console.log(products)
+  
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!products) return null

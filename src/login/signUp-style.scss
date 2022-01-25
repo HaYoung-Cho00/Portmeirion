@@ -31,6 +31,20 @@
       }
     }
   }
+  input {
+    border: none;
+    border: 1px solid #ECE9E5;
+    width: 400px;
+    height: 50px;
+    padding: 0 10px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    &:focus {
+      border: 1px solid #333E48;
+    }
+  }
 }
 
 @media only screen and (max-width: 1000px) {

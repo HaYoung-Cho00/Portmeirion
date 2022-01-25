@@ -1,27 +1,25 @@
 import './style/contents.scss'
-import PageBtns from './PageBtns'
-import { Link, useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import useAsync from '../hooks/useAsync'
 
 function Contents({products}) {
   const param = useParams()
-  
-  function getItem() {
-    const response = axios.get(`http://localhost:8080/collection/${param.name}`)
+  const { name } = param
+
+  async function getCollectionLists() {
+    const response = await axios.get(`http://localhost:8080/collection/${name}`)
     return response.data
   }
   
-  const state = useAsync(getItem)
+  const state = useAsync(getCollectionLists)
   
   const { loading, error, data: items} = state
-  
-  
+
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!items) return null
-  
-  console.log(items)
+
   return(
     <article id='contents'>
       <ul>
@@ -40,7 +38,6 @@ function Contents({products}) {
           ))
         }
       </ul>
-      <PageBtns />
     </article>
   )
 }

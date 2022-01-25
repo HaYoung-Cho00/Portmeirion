@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ProductSlides = styled.article`
     div.textArea {
@@ -57,45 +58,76 @@ const ProductSlides = styled.article`
     }
 `
 
-function SquareSlider(props) {
+function SquareSlider({collection}) {
   return (
-<ProductSlides>
-          
-          <ul>
+    <ProductSlides>        
+      <ul>
+        <li>
+          <img className='toProduct' src="./img/sophie/3pcserver.jpg" alt='bowl' />
+          <ul className='pickedDesc'>
             <li>
-              <img className='toProduct' src="./img/sophie/3pcserver.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name1</h3></li>
-                <li>Temporibus autem quibusdam et aut officiis debitis.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
+              <h3 className='toProduct'>
+                Sophie Conran Floret Alloy 3 Part Condiment Tray
+              </h3>
             </li>
+            <li>$99.99</li>
             <li>
-              <img className='toProduct' src="./img/sophie/arborbowl.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name2</h3></li>
-                <li>Ecessitatibus saepe eveniet ut et voluptates repudiandae.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-            <li>
-              <img className='toProduct' src="./img/sophie/arbormug.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name3</h3></li>
-                <li>Aut perferendis doloribus asperiores repellat.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
-            </li>
-            <li>
-              <img className='toProduct' src="./img/sophie/arborservplate.jpg" alt='bowl' />
-              <ul className='pickedDesc'>
-                <li><h3 className='toProduct'>Product Name4</h3></li>
-                <li>Rerferendis autem quibusdam et au repellat.</li>
-                <li><button className='toProduct'>SHOP NOW</button></li>
-              </ul>
+              <button className='toProduct'>
+                <Link to={`detailView/12`}>SHOP NOW</Link>
+              </button>
             </li>
           </ul>
-        </ProductSlides>
+        </li>
+        <li>
+          <img className='toProduct' src="./img/sophie/arborbowl.jpg" alt='bowl' />
+          <ul className='pickedDesc'>
+            <li>
+              <h3 className='toProduct'>
+                Sophie Conran Arbor 6" All Purpose Bowl- Robin's Egg
+              </h3>
+            </li>
+            <li>$14.99</li>
+            <li>
+              <button className='toProduct'>
+                <Link to={`detailView/6`}>SHOP NOW</Link>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <img className='toProduct' src="./img/sophie/arbormug.jpg" alt='bowl' />
+          <ul className='pickedDesc'>
+            <li>
+              <h3 className='toProduct'>
+                Sophie Conran Arbor 14 Ounce Mug- Creamy White
+              </h3>
+            </li>
+            <li>$14.99</li>
+            <li>
+              <button className='toProduct'>
+                <Link to={`detailView/17`}>SHOP NOW</Link>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <img className='toProduct' src="./img/sophie/arborservplate.jpg" alt='bowl' />
+          <ul className='pickedDesc'>
+            <li>
+              <h3 className='toProduct'>
+              Sophie Conran Arbor Large Serving Platter- Dove Grey
+              </h3>
+            </li>
+            <li>$51.99</li>
+            <li>
+              <button className='toProduct'>
+                <Link to={`detailView/24`}>SHOP NOW</Link>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </ProductSlides>
   );
 }
 

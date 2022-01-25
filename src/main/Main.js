@@ -38,9 +38,6 @@ const Slider1 = createSlider('./img/main/slider/Visual.jpg')
 const Slider2 = createSlider('./img/main/slider/slider1.jpg')
 const Slider3 = createSlider('./img/main/slider/slider2.jpg')
 
-
-
-
 async function getCollections() {
   const response = await axios.get('http://localhost:8080/collections')
   return response.data
@@ -54,7 +51,6 @@ function Main() {
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!collections) return null
-  console.log(collections[0])
 
   const {collection:CN1, desc: CD1} = collections[0]
   const {collection:CN2, desc: CD2} = collections[5]
@@ -82,8 +78,8 @@ function Main() {
             <p>We think you'll love these</p>
           </div>
           <div id="newItems">
-            <IoIosArrowBack className='arrows' id='leftArrow' />
-            <IoIosArrowForward className='arrows' id='rightArrow' />
+            {/* <IoIosArrowBack className='arrows' id='leftArrow' />
+            <IoIosArrowForward className='arrows' id='rightArrow' /> */}
             <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
@@ -94,15 +90,15 @@ function Main() {
               <p>
               A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
               </p>
-              <button>Read More</button>
+              <button><Link to='new'>Read More</Link></button>
             </div>
             <h3 className='toProduct'>BOTANIC GARDEN</h3>
-            <ul id='mobileSilder'>
+            {/* <ul id='mobileSilder'>
               <li><BsCircleFill /></li>
               <li><BsCircleFill /></li>
               <li><BsCircleFill /></li>
               <li><BsCircleFill /></li>
-            </ul>
+            </ul> */}
           </div>
         </article>
         <article id="collections">
@@ -135,7 +131,7 @@ function Main() {
               </p>
               <button>Click The Image To Read More</button>
             </div>
-            <Link to='collection'>
+            <Link to='collections'>
             <div id='readmore'>
               <h1>READ MORE</h1> 
             </div>
