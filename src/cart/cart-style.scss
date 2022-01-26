@@ -1,6 +1,6 @@
 #cart {
   margin: 150px auto 100px;
-  width: 100%;
+  // width: 100%;
   border-collapse: collapse;
   a {
     color: var(--navy);
@@ -10,7 +10,6 @@
   }
   .qty {
     display: flex;
-    margin-top: 27px;
     align-items: center;
     p {
       cursor: pointer;
@@ -53,7 +52,7 @@
         width: 10%;
       }
       td:nth-child(2)  {
-        width: 15%;
+        width: 30%;
       }
     }
   }
@@ -70,6 +69,7 @@
   img {
     width: 100px;
     height: 100px;
+    margin-top: 0;
   }
 }
 

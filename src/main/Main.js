@@ -1,9 +1,9 @@
 import './main.scss';
-import axios from 'axios'
 import { BsCircleFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 import useAsync from '../hooks/useAsync'
 import { Carousel } from 'antd'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';

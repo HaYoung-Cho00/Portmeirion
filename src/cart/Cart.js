@@ -2,8 +2,23 @@ import React from 'react';
 import './cart-style.scss';
 import Button from '../include/Button'
 import Quantity from '../include/Quantity';
+import axios from 'axios'
+import useAsync from '../hooks/useAsync'
+import { Link } from 'react-router-dom'
 
 function Cart() {
+  async function getCartProducts() {
+    const response = await axios.get('http://localhost:8080/cart')
+    return response.data
+  }
+  const state = useAsync(getCartProducts)
+  
+  const { loading, error, data: products} = state
+  
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!products) return null
+
   return (
     <table id='cart' className='innerContainer'>
       <thead>
@@ -19,36 +34,23 @@ function Cart() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
-          <td><a href='#'>Product Name</a></td>
-          <td className='qty'>
-            <Quantity />
-            <p>Delete</p>
-          </td>
-          <td>$200</td>
-          <td>$800</td>
-        </tr>
-        <tr>
-          <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
-          <td><a href='#'>Product Name</a></td>
-          <td className='qty'>
-            <Quantity />
-            <p>Delete</p>
-          </td>
-          <td>$200</td>
-          <td>$400</td>
-        </tr>
-        <tr>
-          <td><img src='http://via.placeholder.com/100X100' alt='cartItem1 '/></td>
-          <td><a href='#'>Product Name</a></td>
-          <td className='qty'>
-            <Quantity />
-            <p>Delete</p>
-          </td>
-          <td>$200</td>
-          <td>$600</td>
-        </tr>
+        {
+          products.map(product => (
+            <tr key={product.id}>
+              <td><img src={`./img/${product.imgUrl}.jpg`} alt='cartItem1 '/></td>
+              <td><Link to={`/detailView/${product.id}`}>{product.name}</Link></td>
+              <td>
+                <div className='qty'>
+                  <Quantity />
+                  <p>Delete</p>
+                </div>
+              </td>
+              <td>{product.price}</td>
+              <td>{product.price}</td>
+            </tr>
+            
+          ))
+        }
       </tbody>
       <tfoot>
         <tr>

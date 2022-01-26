@@ -2,9 +2,25 @@ import './style/header.scss';
 import { Link } from 'react-router-dom'
 import { RiMenuFill } from 'react-icons/ri'
 import { AiOutlineHeart, AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
-
+import axios from 'axios'
+import useAsync from '../hooks/useAsync'
 // li 목록들 받아와서 반복문 돌리기
 function Header() {
+  async function getCartCount() {
+    const response = await axios.get('http://localhost:8080/cartCount')
+    return response.data
+  }
+  
+    const state = useAsync(getCartCount)
+    
+    const { loading, error, data: count} = state
+    
+    if(loading) return <h1>Loading...</h1>
+    if(error) return <h1>Failed</h1>
+    if(!count) return null
+
+    const cartItems = count[0]['COUNT(inCart)']
+
   return (
     <header>
       <nav className='innerContainer'>
@@ -42,7 +58,7 @@ function Header() {
           <li>
             <Link id='cart' to='cart'>
               <AiOutlineShopping />
-              <div>1</div>
+              <div>{cartItems}</div>
             </Link>
           </li>
           <li><AiOutlineHeart /></li>
