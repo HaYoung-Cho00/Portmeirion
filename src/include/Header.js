@@ -39,9 +39,11 @@ function Header() {
         </ul>
         <ul id='desktopViewMenu'>
           <li><Link to='login'><AiOutlineUser /></Link></li>
-          <li id='cart'>
-            <Link to='cart'><AiOutlineShopping /></Link>
-            <div>1</div>
+          <li>
+            <Link id='cart' to='cart'>
+              <AiOutlineShopping />
+              <div>1</div>
+            </Link>
           </li>
           <li><AiOutlineHeart /></li>
         </ul>

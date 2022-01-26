@@ -8,10 +8,16 @@ header {
   top: 0;
   #cart {
     position: relative;
-    > div {
+    div {
       position: absolute;
-      left: 0;
-      top: 0;
+      right: -10px;
+      top: -15px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: var(--gray);
+      color: var(--navy);
     }
   }
   a {
