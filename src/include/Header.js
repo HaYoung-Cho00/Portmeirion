@@ -10,7 +10,8 @@ function Header() {
       <nav className='innerContainer'>
         <h1><Link to='/'>Portmeirion</Link></h1>
         <ul>
-          <li><Link to='new'>New Arrivals</Link>
+          <li>
+            <Link to='new'>New Arrivals</Link>
             {/* <ul className='new subMenu'>
               <li><Link to=''>Botanic Garden</Link></li>
               <li>Botanic Garden Bouquet</li>
@@ -21,7 +22,8 @@ function Header() {
               <img src="./img/header/header1.jpg" alt='collectionPicture'/>
             </ul> */}
           </li>
-          <li><Link to='collections'>Collections</Link>
+          <li>
+            <Link to='collections'>Collections</Link>
             {/* <ul className='collections subMenu'>
               <li><Link to='collection/Botanic Garden'>Botanic Garden</Link></li>
               <li><Link to='collection/Botanic Garden Bouquet'>Botanic Garden Bouquet</Link></li>
@@ -37,7 +39,10 @@ function Header() {
         </ul>
         <ul id='desktopViewMenu'>
           <li><Link to='login'><AiOutlineUser /></Link></li>
-          <li><Link to='cart'><AiOutlineShopping /></Link></li>
+          <li id='cart'>
+            <Link to='cart'><AiOutlineShopping /></Link>
+            <div>1</div>
+          </li>
           <li><AiOutlineHeart /></li>
         </ul>
         <ul id='smallViewMenu'>

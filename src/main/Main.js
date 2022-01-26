@@ -70,14 +70,13 @@ function Main() {
         </div>
       </Carousel>
       </section>
-      <section id='newBG'></section>
-      <section className="innerContainer">
+      <section>
         <article id="new">
-          <div className="textArea">
+          <div className="textArea innerContainer">
             <h1><Link to='new'>NEW ARRIVAL</Link></h1>
             <p>We think you'll love these</p>
           </div>
-          <div id="newItems">
+          <div id="newItems" className="innerContainer">
             {/* <IoIosArrowBack className='arrows' id='leftArrow' />
             <IoIosArrowForward className='arrows' id='rightArrow' /> */}
             <div id='newDesc1'>
@@ -85,7 +84,7 @@ function Main() {
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
               </p>
             </div>
-            <img className='toProduct' src="./img/main/new/new1.jpg" alt='collectionImage' />
+            <img className='toProduct' src="./img/main/new/new1.jpg" alt='new' />
             <div id='newDesc2'>
               <p>
               A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
@@ -101,7 +100,7 @@ function Main() {
             </ul> */}
           </div>
         </article>
-        <article id="collections">
+        <article id="collections"  className="innerContainer">
           <div className="textArea">
             <h1><Link to='collection'>FEATURED COLLECTIONS</Link></h1>
             <p>Discover the art of the everyday</p>
@@ -138,11 +137,11 @@ function Main() {
             </Link>
           </div>
         </article>
-        <div className="textArea">
+        <div className="textArea" className="innerContainer">
           <h1>PICKED FOR YOU</h1>
           <p>Treat yourself. Treat a friend. Treat a loved one.</p>
+          <SquareSlider id='recommendation' />
         </div>
-        <SquareSlider id='recommendation' />
       </section>
     </div>
   )

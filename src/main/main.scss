@@ -10,10 +10,10 @@
     display: none;
   }
   article {
-    margin: 100px 0 250px;
+    margin: 100px auto 250px;
   }
   .textArea {
-    margin: 50px 0;
+    margin: 50px auto;
     h1 {
       font-size: 26px;
     }
@@ -25,21 +25,16 @@
     margin-top: 20px;
     font-weight: bold;
   }
-  #newBG {
-    top: 600px;
-    z-index: -1;
-    left: 0;
-    position: absolute;
-    background: url("../../public/img/main/new/New_bg.jpg") no-repeat no-repeat center;
-    height: 800px;
-    width: 100%;
-    margin-top: 150px;
-  }
   #new {
+    background: url("../../public/img/main/new/New_bg.jpg") no-repeat no-repeat center;
     margin: 140px 0;
   }
   #newItems {
     position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
     h3 {
       margin-top: 20px;
       position: absolute;
@@ -54,11 +49,8 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
     img {
+      width: 30%;
       margin: 0 30px;
     }
     div {
@@ -162,10 +154,11 @@
       display: grid;
       width: 100%;
       height: 470px;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1.2fr 1fr;
       grid-template-rows: 0.7fr 1fr 1.5fr;
       img {
         grid-area: 1/1/4/2;
+        width: 80%;
       }
       h3 {
         left: 0;
@@ -206,9 +199,6 @@
 
 @media only screen and (max-width: 1220px) {
   #main {
-    #newBG {
-      top: 510px;
-    }
     #gallery {
       width: 100%;
       grid-template-columns: 1.2fr 0.5fr 0.7fr;
@@ -245,8 +235,12 @@
 
 @media only screen and (max-width: 940px) {
   #main {
-    #newBG {
-      top: 510px;
+    #new {
+      img {
+        width: 90%;
+        margin: 0 10px;
+
+      }
     }
     #gallery {
       display: flex;
@@ -268,9 +262,6 @@
 
 @media only screen and (max-width: 715px) { 
   #main { 
-    #newBG {
-      top: 490px;
-    }
     #newItems {
       padding: 0;
       position: relative;
@@ -316,7 +307,6 @@
 
 @media only screen and (max-width: 625px) {
   #main {
-
     #mobileSilder {
       bottom: -160px;
       transform: translateX(-60%);
@@ -334,6 +324,7 @@
         margin: 20px 0;
       }
       img {
+        width: 60%;
         margin-bottom: 50px;
       }
       h3 {
