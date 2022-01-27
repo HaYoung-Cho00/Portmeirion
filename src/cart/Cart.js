@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './cart-style.scss';
 import Button from '../include/Button'
 import Quantity from '../include/Quantity';
@@ -12,24 +12,25 @@ function Cart() {
     return response.data
   }
   const state = useAsync(getCartProducts)
-
-  const [initialPrice, setinitialPrice] = useState(0)
-  const [initialQty, setinitialQty] = useState(1)
-
+  
   const { loading, error, data: products} = state
   
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!products) return null
-  console.log(products[0])
 
-  function onChange(e) {
-      const qty = parseInt(e.target.value)
-      const total = (qty * products[0].price).toFixed(2)
-      setinitialQty(qty)
-      setinitialPrice(total)
-      console.log('ss')
-    }
+  console.log(products)
+  let arr = []
+  let totalPrice;
+  for(let i = 0; i < products.length; i++) {
+    arr.push(products[i].price)
+    console.log(arr)
+  }
+  
+  totalPrice = arr.reduce((prev, curr) => {
+    return parseFloat(prev) + parseFloat(curr)
+  })
+  console.log(totalPrice)
   return (
     <table id='cart' className='innerContainer'>
       <thead>  
@@ -52,8 +53,7 @@ function Cart() {
               <td><Link to={`/detailView/${product.id}`}>{product.name}</Link></td>
               <td>
                 <div className='qty'>
-                  <Quantity onChange={onChange} defaultValue={product.quantity} />
-                  <p>Delete</p>
+                  <Quantity readonly defaultValue={product.quantity} />
                 </div>
               </td>
               <td>${product.price}</td>
@@ -65,7 +65,7 @@ function Cart() {
       <tfoot>
         <tr>
           <th colSpan='4'>Total Price</th>
-          <th>$1800</th>
+          <th>${totalPrice}</th>
         </tr>
         <tr>
           <td colSpan='5'><Button>CHECKOUT</Button></td>
