@@ -31,7 +31,7 @@ function Contents({products}) {
                   <img src={`./img/${product.imgUrl}.jpg`} alt="products" />
                   <li className='new'>NEW</li>
                   <li><h3>{product.name}</h3></li>
-                  <li>{product.price}</li>
+                  <li>${product.price}</li>
                 </ul>
               </Link>
             </li>

@@ -10,9 +10,9 @@ const QtyInput = styled.input`
   height: 50px;
 `
 
-function Quantity() {
+function Quantity({defaultValue, onChange}) {
   return (
-    <QtyInput type='number' defaultValue={1} />
+    <QtyInput onChange={onChange} type='number' defaultValue={defaultValue} />
   );
 }
 

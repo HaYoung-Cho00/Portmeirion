@@ -5,7 +5,7 @@ import Quantity from './Quantity';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import useAsync from '../hooks/useAsync';
-
+import { useState } from 'react'
 const DetailViewSection = styled.section`
   padding-top: 250px;
   display: flex;
@@ -65,11 +65,14 @@ const DetailViewSection = styled.section`
 function ProductDetailView() {
   const param = useParams()
   const { id } = param
-
+  
   async function getProductDetails(){
     const response = await axios.get(`http://localhost:8080/detailView/${id}`)
     return response.data
   }
+  
+  const [initialPrice, setinitialPrice] = useState(0)
+  const [initialQty, setinitialQty] = useState(1)
 
   const state = useAsync(getProductDetails)
   
@@ -78,7 +81,25 @@ function ProductDetailView() {
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!productInfo) return null
-  console.log(productInfo)
+  
+  
+  function onChange(e) {
+    const qty = parseInt(e.target.value)
+    const total = (qty * productInfo[0].price).toFixed(2)
+    setinitialQty(qty)
+    setinitialPrice(total)
+    console.log('ss')
+  }
+
+  function insertCustomer() {
+    axios.put(`http://localhost:8080/addCart/${id}`, {
+    quantity: initialQty,
+    inCart: 1,
+    })
+    .then((res) => {console.log(res)})
+    .catch((err) => {console.log(err)})
+  }
+  
   return (
     <DetailViewSection className='innerContainer'>
       <article>
@@ -95,9 +116,9 @@ function ProductDetailView() {
           </div>
           <div id='order'>
             <label htmlFor='qty'>
-              Quantity: <Quantity />
+              Quantity: <Quantity onChange={onChange} defaultValue={initialQty}/>
             </label>
-              <Button>ADD TO CART - {productInfo[0].price}</Button>
+              <Button onClick={insertCustomer}>ADD TO CART - ${initialPrice? initialPrice: productInfo[0].price}</Button>
           </div>
         </aside>
       </article>

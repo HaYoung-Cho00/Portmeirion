@@ -10,9 +10,9 @@ const Btn = styled.button`
   cursor: pointer;
 `
 
-function Button({children, type}) {
+function Button({children, type, onClick}) {
   return (
-    <Btn type={type}>
+    <Btn onClick={onClick} type={type}>
       {children}
     </Btn>
   );
