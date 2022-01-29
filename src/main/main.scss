@@ -6,9 +6,6 @@
       color:var(--navy)
     }
   }
-  #mobileSilder {
-    display: none;
-  }
   article {
     margin: 100px auto 250px;
   }
@@ -239,7 +236,6 @@
       img {
         width: 90%;
         margin: 0 10px;
-
       }
     }
     #gallery {
@@ -275,30 +271,6 @@
         flex-direction: column;
         > li {
           margin-right: 0;
-        }
-      }
-    }
-    #mobileSilder {
-      position: absolute;
-      bottom: -60px;
-      width: 100px;
-      height: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      opacity: 1;
-      > li {
-        width: 100%;
-        svg {
-          width: 12px;
-          height: 12px;
-          transition: 0.5s;
-          border-radius: 50%;
-          color: rgba($color: #000000, $alpha: 0);
-          border: 1px solid var(--navy);
-          &:hover {
-            color: var(--navy);
-          }
         }
       }
     }

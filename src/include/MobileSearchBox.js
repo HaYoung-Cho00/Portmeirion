@@ -48,7 +48,6 @@ function MobileSearchBox(props) {
       <div>
         <div className='selectType'>
           <h3>Type</h3>
-          <GoTriangleDown />
         </div>
         <ul className='options'>
           <li>New <input type='checkbox' /></li>
@@ -58,7 +57,6 @@ function MobileSearchBox(props) {
       <div>
         <div className='selectType'>
           <h3>Price</h3>
-          <GoTriangleDown />
         </div>
         <ul className='options'>
           <li>$0 - $49.99 <input type='checkbox' /></li>
@@ -69,7 +67,6 @@ function MobileSearchBox(props) {
       <div>
         <div className='selectType'>
           <h3>Collection</h3>
-          <GoTriangleDown />
         </div>
         <ul className='options'>
           <li>Botanic Garden <input type='checkbox' /></li>

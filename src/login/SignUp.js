@@ -9,25 +9,7 @@ import { useState } from 'react'
 
 function SignUp() {
   const navigate = useNavigate()
-  // async function createCustomer() {
-  //   const response = axios.post(`http://localhost:8080/login/signup`,
-  //   {
-  //     // firstName: values.firstName,
-  //     // lastName: values.lastName,
-  //     // email: values.email,
-  //     // confirmEmail: values.confirmEmail,
-  //     // password: values.password,
-  //     // confirmPassword: valeus.confirmPassword
-  //   })
-  //   .then((result) => {
-  //     console.log(result)
-  //     navigate(-1)
-  //   })
-  //   .catch((error) => {
-  //     console.log(error)
-  //   })
-  //   return response.data
-  // }
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

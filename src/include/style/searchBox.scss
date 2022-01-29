@@ -10,15 +10,13 @@
     align-items: center;
     height: 50px;
     line-height: 50px;
-    &:hover + .options {
-      display: block;
+    h3 {
+      font-weight: bold;
     }
   }
   .options {
     border-bottom: 1px solid var(--gray);
     padding: 20px 0;
-    // display: none;
-    transition: 0.5s;
     > li {
       height: 30px;
       line-height: 2;

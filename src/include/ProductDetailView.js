@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import useAsync from '../hooks/useAsync';
 import { useState } from 'react'
+
 const DetailViewSection = styled.section`
   padding-top: 250px;
   display: flex;
@@ -88,7 +89,6 @@ function ProductDetailView() {
     const total = (qty * productInfo[0].price).toFixed(2)
     setinitialQty(qty)
     setinitialPrice(total)
-    console.log('ss')
   }
 
   function insertCustomer() {
@@ -122,10 +122,6 @@ function ProductDetailView() {
           </div>
         </aside>
       </article>
-      {/* <div>
-        <h1>PEOPLE WHO VIEWED THIS ITEM ALSO VIEWED</h1>
-        <SquareSlider  />
-      </div> */}
     </DetailViewSection>
   );
 }

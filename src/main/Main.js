@@ -77,8 +77,6 @@ function Main() {
             <p>We think you'll love these</p>
           </div>
           <div id="newItems" className="innerContainer">
-            {/* <IoIosArrowBack className='arrows' id='leftArrow' />
-            <IoIosArrowForward className='arrows' id='rightArrow' /> */}
             <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
@@ -92,12 +90,6 @@ function Main() {
               <button><Link to='new'>Read More</Link></button>
             </div>
             <h3 className='toProduct'>BOTANIC GARDEN</h3>
-            {/* <ul id='mobileSilder'>
-              <li><BsCircleFill /></li>
-              <li><BsCircleFill /></li>
-              <li><BsCircleFill /></li>
-              <li><BsCircleFill /></li>
-            </ul> */}
           </div>
         </article>
         <article id="collections"  className="innerContainer">

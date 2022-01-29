@@ -19,8 +19,6 @@ function NewIndex() {
   if(error) return <h1>Failed</h1>
   if(!products) return null
 
-  console.log(products)
-
   return(
     <div className='productLists'>
       <section>

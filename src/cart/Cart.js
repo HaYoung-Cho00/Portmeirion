@@ -1,10 +1,19 @@
 import React from 'react';
 import './cart-style.scss';
 import Button from '../include/Button'
-import Quantity from '../include/Quantity';
 import axios from 'axios'
 import useAsync from '../hooks/useAsync'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const QtyInput = styled.input`
+border: 1px solid var(--gray);
+padding: 5px;
+text-align: center;
+outline: none;
+width: 50px;
+height: 50px;
+`
 
 function Cart() {
   async function getCartProducts() {
@@ -19,18 +28,16 @@ function Cart() {
   if(error) return <h1>Failed</h1>
   if(!products) return null
 
-  console.log(products)
   let arr = []
   let totalPrice;
   for(let i = 0; i < products.length; i++) {
     arr.push(products[i].price)
-    console.log(arr)
   }
   
   totalPrice = arr.reduce((prev, curr) => {
-    return parseFloat(prev) + parseFloat(curr)
+    let total = parseFloat(prev) + parseFloat(curr)
+    return total.toFixed(2)
   })
-  console.log(totalPrice)
   return (
     <table id='cart' className='innerContainer'>
       <thead>  
@@ -53,7 +60,7 @@ function Cart() {
               <td><Link to={`/detailView/${product.id}`}>{product.name}</Link></td>
               <td>
                 <div className='qty'>
-                  <Quantity readonly defaultValue={product.quantity} />
+                  <QtyInput readOnly defaultValue={product.quantity} />
                 </div>
               </td>
               <td>${product.price}</td>

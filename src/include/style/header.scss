@@ -26,9 +26,6 @@ header {
       color:var(--gray)
     }
   }
-  img {
-    width: 270px;
-  }
   #desktopViewMenu {
     svg {
       margin-top: 23px;
@@ -64,49 +61,6 @@ header {
       }
     }
   }
-  .subMenu {
-    transition: 0.5s;
-    line-height: 1.5;
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 70px;
-    padding: 30px 10px;
-    height: 300px;
-    width: 600px;
-    color: var(--navy);
-    background-color: var(--gray);
-    a{
-      color: var(--navy);
-    }
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 25px;
-      top: -10px;
-      width: 20px;
-      height: 20px;
-      transform: rotate(45deg);
-      background-color: var(--gray);
-    }
-    > li {
-      margin: 15px;
-      position: relative;
-      transition: 0.5s;
-      &:hover {
-        font-weight: bold;
-      }
-    }
-    > img {
-      position: absolute;
-      right: 0;
-      z-index: 1;
-      bottom: 0;
-      height: 300px;
-      
-    }
-  }
   #smallViewMenu {
     display: none;
     position: relative;
@@ -117,11 +71,6 @@ header {
     > svg {
       width: 30px;
       height: 30px;
-      &:hover + li {
-        ul {
-          display: block;
-        }
-      }
     }
     > li {
       > ul {
@@ -140,11 +89,15 @@ header {
   .mobileMenu {
     display: none;
   }
+  #smallViewMenu >svg.onClick + li {
+    ul {
+      display: block;
+    }
+  }
 }
 
 @media only screen and (max-width: 1100px) {
   header {
-    
     .innerContainer {
       > ul {
         > li:hover {
