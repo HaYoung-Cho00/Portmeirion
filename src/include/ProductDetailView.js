@@ -104,7 +104,7 @@ function ProductDetailView() {
     <DetailViewSection className='innerContainer'>
       <article>
         <aside>
-          <img src={`./img/${productInfo[0].inmgUrl}`} alt='product' />
+          <img src={`./img/${productInfo[0].imgUrl}.jpg`} alt='product' />
         </aside>
         <aside>
           <div>
