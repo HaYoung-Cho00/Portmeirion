@@ -35,7 +35,7 @@ function CollectionIndex(props) {
   return (
     <div className='productLists'>
       <section>
-        <img src="./img/collections/banner.png" alt="banner" />
+        <img src="../../img/collections/banner.png" alt="banner" />
       </section>
       <section className='innerContainer introHeader'>
         <div>

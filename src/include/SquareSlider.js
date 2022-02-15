@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import useAsync from '../hooks/useAsync'
 
 const ProductSlides = styled.article`
     div.textArea {
@@ -59,73 +61,39 @@ const ProductSlides = styled.article`
 `
 
 function SquareSlider({collection}) {
+  async function getRecommendations() {
+    const response = await axios.get(`http://localhost:8080/recommendations/${collection}`)
+    return response.data
+  }
+  
+  const state = useAsync(getRecommendations)
+
+  const { loading, error, data: products} = state
+
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!products) return null
+  console.log(products)
+
   return (
     <ProductSlides>        
       <ul>
+        {products.map((product) => (
         <li>
-          <img className='toProduct' src="./img/sophie/3pcserver.jpg" alt='bowl' />
+          <img className='toProduct' src={`../../img/${product.imgUrl}.jpg`} alt='bowl' />
           <ul className='pickedDesc'>
             <li>
-              <h3 className='toProduct'>
-                Sophie Conran Floret Alloy 3 Part Condiment Tray
-              </h3>
+              <h3 className='toProduct'>{product.name}</h3>
             </li>
-            <li>$99.99</li>
+            <li>${product.price}</li>
             <li>
               <button className='toProduct'>
-                <Link to={`detailView/12`}>SHOP NOW</Link>
+                <Link to={`detailView/${product.id}`}>SHOP NOW</Link>
               </button>
             </li>
           </ul>
         </li>
-        <li>
-          <img className='toProduct' src="./img/sophie/arborbowl.jpg" alt='bowl' />
-          <ul className='pickedDesc'>
-            <li>
-              <h3 className='toProduct'>
-                Sophie Conran Arbor 6" All Purpose Bowl- Robin's Egg
-              </h3>
-            </li>
-            <li>$14.99</li>
-            <li>
-              <button className='toProduct'>
-                <Link to={`detailView/6`}>SHOP NOW</Link>
-              </button>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <img className='toProduct' src="./img/sophie/arbormug.jpg" alt='bowl' />
-          <ul className='pickedDesc'>
-            <li>
-              <h3 className='toProduct'>
-                Sophie Conran Arbor 14 Ounce Mug- Creamy White
-              </h3>
-            </li>
-            <li>$14.99</li>
-            <li>
-              <button className='toProduct'>
-                <Link to={`detailView/17`}>SHOP NOW</Link>
-              </button>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <img className='toProduct' src="./img/sophie/arborservplate.jpg" alt='bowl' />
-          <ul className='pickedDesc'>
-            <li>
-              <h3 className='toProduct'>
-              Sophie Conran Arbor Large Serving Platter- Dove Grey
-              </h3>
-            </li>
-            <li>$51.99</li>
-            <li>
-              <button className='toProduct'>
-                <Link to={`detailView/24`}>SHOP NOW</Link>
-              </button>
-            </li>
-          </ul>
-        </li>
+        ))}
       </ul>
     </ProductSlides>
   );

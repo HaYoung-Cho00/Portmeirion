@@ -25,7 +25,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/login/signup' element={<SignUp />} />
         <Route path='/product/:id' element={<ProductDetailView />} />
-        <Route path='/detailView/:id' element={<ProductDetailView />} />
+        <Route path='/detailView/:id&:collection' element={<ProductDetailView />} />
       </Routes>
       <Footer></Footer>
     </div>

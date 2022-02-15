@@ -5,10 +5,10 @@ import useAsync from '../hooks/useAsync'
 
 function Contents({products}) {
   const param = useParams()
-  const { name } = param
+  const { id } = param
 
   async function getCollectionLists() {
-    const response = await axios.get(`http://localhost:8080/collection/${name}`)
+    const response = await axios.get(`http://localhost:8080/collection/${id}`)
     return response.data
   }
   
@@ -23,20 +23,18 @@ function Contents({products}) {
   return(
     <article id='contents'>
       <ul>
-        {
-          products.map((product, index) => (
+        {products.map((product, index) => (
             <li key={product.id}>
-                <Link to={`/detailView/${product.id}`}>
+                <Link to={`/detailView/${product.id}&${product.collection}`}>
                 <ul className='itemBox'>
-                  <img src={`./img/${product.imgUrl}.jpg`} alt="products" />
+                  <img src={`../../img/${product.imgUrl}.jpg`} alt="products" />
                   <li className='new'>NEW</li>
                   <li><h3>{product.name}</h3></li>
                   <li>${product.price}</li>
                 </ul>
               </Link>
             </li>
-          ))
-        }
+          ))}
       </ul>
     </article>
   )

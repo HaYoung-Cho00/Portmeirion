@@ -20,13 +20,22 @@ function Cart() {
     const response = await axios.get('http://localhost:8080/cart')
     return response.data
   }
+  async function countProducts() {
+    const response = await axios.get('http://localhost:8080/cartCount')
+    return response.data
+  }
   const state = useAsync(getCartProducts)
+  const cartCountState = useAsync(countProducts)
   
   const { loading, error, data: products} = state
+  const { loading: countLoading, error: countError, data: counts} = cartCountState
   
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!products) return null
+  if(countLoading) return <h1>Loading...</h1>
+  if(countError) return <h1>Failed</h1>
+  if(!counts) return null
 
   let arr = []
   let totalPrice;
@@ -42,11 +51,11 @@ function Cart() {
     <table id='cart' className='innerContainer'>
       <thead>  
         <tr>
-          <th colSpan='5'>Your Cart (1 Items)</th>
+          <th colSpan='5'>Your Cart ({counts[0]["COUNT(inCart)"]} Items)</th>
         </tr>
         <tr>
           <th>Product</th>
-          <th> </th>
+          <th></th>
           <th>Quantity</th>
           <th>Price</th>
           <th>Total Price</th>

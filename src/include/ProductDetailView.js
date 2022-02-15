@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import useAsync from '../hooks/useAsync';
 import { useState } from 'react'
+import SquareSlider from './SquareSlider';
 
 const DetailViewSection = styled.section`
   padding-top: 250px;
@@ -65,7 +66,8 @@ const DetailViewSection = styled.section`
 
 function ProductDetailView() {
   const param = useParams()
-  const { id } = param
+  const { id, collectionParam } = param
+  console.log(param)
   
   async function getProductDetails(){
     const response = await axios.get(`http://localhost:8080/detailView/${id}`)
@@ -79,6 +81,20 @@ function ProductDetailView() {
   
   const { loading, error, data: productInfo} = state
   
+  async function getRecommendations() {
+    const response = await axios.get(`http://localhost:8080/recommendations/${collectionParam}`)
+    return response.data
+  }
+  
+  const recState = useAsync(getRecommendations)
+
+  const { loading: coll, error: collE, data: collection} = recState
+  if(coll) return <h1>Loading...</h1>
+  if(collE) return <h1>Failed</h1>
+  if(!collection) return null
+
+  console.log(collection)
+
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!productInfo) return null
@@ -99,12 +115,13 @@ function ProductDetailView() {
     .then((res) => {console.log(res)})
     .catch((err) => {console.log(err)})
   }
+
   
   return (
     <DetailViewSection className='innerContainer'>
       <article>
         <aside>
-          <img src={`./img/${productInfo[0].imgUrl}.jpg`} alt='product' />
+          <img src={`../../img/${productInfo[0].imgUrl}.jpg`} alt='product' />
         </aside>
         <aside>
           <div>
@@ -116,11 +133,12 @@ function ProductDetailView() {
           </div>
           <div id='order'>
             <label htmlFor='qty'>
-              Quantity: <Quantity onChange={onChange} defaultValue={initialQty}/>
+              Quantity: <Quantity type='number' onChange={onChange} defaultValue={initialQty}/>
             </label>
               <Button onClick={insertCustomer}>ADD TO CART - ${initialPrice? initialPrice: productInfo[0].price}</Button>
           </div>
         </aside>
+        <SquareSlider collection={collection} />
       </article>
     </DetailViewSection>
   );
