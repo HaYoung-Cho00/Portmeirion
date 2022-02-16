@@ -32,7 +32,8 @@ function Cart() {
   
   if(loading & countLoading) return <h1>Loading...</h1>
   if(error & countError) return <h1>Failed</h1>
-  if(!products & !counts) return null
+  if(!products) return null
+  if(!counts) return null
   console.log(products)
   console.log(counts)
 

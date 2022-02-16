@@ -8,7 +8,7 @@ import useAsync from '../hooks/useAsync';
 import { useParams } from 'react-router-dom';
 import './collecIndex.scss'
 
-function CollectionIndex(props) {
+function CollectionIndex() {
   const param = useParams()
   const { name } = param
 
@@ -29,7 +29,8 @@ function CollectionIndex(props) {
   
   if(loading & collLoading) return <h1>Loading...</h1>
   if(error & collError) return <h1>Failed</h1>
-  if(!products & !collInfo) return null
+  if(!products) return null
+  if(!collInfo) return null
 
   return (
     <div className='productLists'>
