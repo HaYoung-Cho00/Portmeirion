@@ -34,8 +34,6 @@ function Cart() {
   if(error & countError) return <h1>Failed</h1>
   if(!products) return null
   if(!counts) return null
-  console.log(products)
-  console.log(counts)
 
   let arr = []
   let totalPrice;

@@ -52,11 +52,12 @@ function Main() {
   const pickedProductsState = useAsync(getPickedProducts)
   
   const { loading, error, data: collections} = state
-  const { loading: pickedLoading, error: pickedErr, data: collection} = pickedProductsState
+  const { loading: pickedLoading, error: pickedErr, data: recommendations} = pickedProductsState
   
   if(loading & pickedLoading) return <h1>Loading...</h1>
   if(error & pickedErr) return <h1>Failed</h1>
-  if(!collections & !collection) return null
+  if(!collections) return null
+  if(!recommendations) return null
 
   const {collection:CN1, desc: CD1} = collections[0]
   const {collection:CN2, desc: CD2} = collections[5]
@@ -138,7 +139,7 @@ function Main() {
         <div className="textArea" className="innerContainer">
           <h1>PICKED FOR YOU</h1>
           <p>Treat yourself. Treat a friend. Treat a loved one.</p>
-          <SquareSlider collection={collection} id='recommendation' />
+          <SquareSlider recommendations={recommendations} id='recommendation' />
         </div>
       </section>
     </div>
