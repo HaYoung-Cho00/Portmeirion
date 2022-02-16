@@ -1,4 +1,5 @@
 import './App.css';
+import './reset.css';
 import { Routes, Route } from 'react-router-dom'
 import Header from './include/Header';
 import Footer from './include/Footer';
@@ -25,7 +26,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/login/signup' element={<SignUp />} />
         <Route path='/product/:id' element={<ProductDetailView />} />
-        <Route path='/detailView/:id&:collection' element={<ProductDetailView />} />
+        <Route path='/detailView/:id&:collectionParam' element={<ProductDetailView />} />
       </Routes>
       <Footer></Footer>
     </div>

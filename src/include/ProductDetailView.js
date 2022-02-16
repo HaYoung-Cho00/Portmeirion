@@ -9,17 +9,25 @@ import { useState } from 'react'
 import SquareSlider from './SquareSlider';
 
 const DetailViewSection = styled.section`
-  padding-top: 250px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   > div {
     text-align: center;
     margin: 150px 0;
   }
   > article:first-child {
     display: flex;
+    img {
+      margin-top: 0;
+    }
+  }
+  #recommendations {
+    margin: 100px 30px;
+    h1 {
+      font-size: 25px;
+    }
   }
   img {
     width: 80%;
@@ -51,15 +59,32 @@ const DetailViewSection = styled.section`
   }
   button {
     font-size: 16px;
-    padding: 1em 5em;
   }
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 1000px) {
     aside {
-      width: 80%;
+      width: 95%;
     }
     > article:first-child {
       flex-direction: column;
       align-items: center;
+      aside:first-child {
+        img {
+          width: 50%;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    // #recommendations {
+    //   margin: 50px;
+    // }
+  }
+  @media only screen and (max-width: 800px) {
+    > article:first-child {
+      img {
+        width: 80%;
+      }
     }
   }
 `
@@ -67,7 +92,6 @@ const DetailViewSection = styled.section`
 function ProductDetailView() {
   const param = useParams()
   const { id, collectionParam } = param
-  console.log(param)
   
   async function getProductDetails(){
     const response = await axios.get(`http://localhost:8080/detailView/${id}`)
@@ -92,8 +116,6 @@ function ProductDetailView() {
   if(coll) return <h1>Loading...</h1>
   if(collE) return <h1>Failed</h1>
   if(!collection) return null
-
-  console.log(collection)
 
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
@@ -138,6 +160,12 @@ function ProductDetailView() {
               <Button onClick={insertCustomer}>ADD TO CART - ${initialPrice? initialPrice: productInfo[0].price}</Button>
           </div>
         </aside>
+      </article>
+      <article id='recommendations'>
+        <div>
+          <h1>WE THINK YOU'LL LOVE THESE</h1>
+          <p>Treat yourself. Treat a friend. Treat a loved one.</p>
+        </div>
         <SquareSlider collection={collection} />
       </article>
     </DetailViewSection>

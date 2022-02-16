@@ -9,13 +9,7 @@
   box-sizing: border-box;
   font-family: 'PT Serif', serif;
 }
-a {
-  text-decoration: none;
-  color: inherit;
-}
-li {
-  list-style: none;
-}
+
 body {
   width: 100%;
   min-width: 500px;

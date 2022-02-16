@@ -48,9 +48,9 @@ function CollectionLists(props) {
         </div>
       </section>
       <section className='innerContainer collectionLists'>
-        {collections.map((collection) => (
+        {collections.map(collection => 
             <CollectionBox key={collection.id} collection={collection} />
-          ))}
+          )}
       </section>
     </CollectSection>
   );

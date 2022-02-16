@@ -12,49 +12,48 @@ const ProductSlides = styled.article`
     > ul {
       display: flex;
       flex-wrap: wrap;
+      overflow: hidden;
       justify-content: space-between;
       > li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 24%;
+        justify-content: flex-start;
+        width: 25%;
+        a {
+          color: var(--navy);
+        }
         ul.pickedDesc {
-          margin-top: 30px;
+          margin-top: 20px;
           text-align: center;
-          width: 90%;
-          li {
-            &:nth-child(2) {
-              margin: 10px;
-            }
+          width: 95%;
+          li:nth-child(2) {
+            margin: 10px;
           }
           button {
-            border: none;
-            outline: none;
+            width: 100%;
             text-decoration: underline;
             background: none;
+            a {
+              width: 100%;
+            }
           }
         }
       }
     }
-    @media only screen and (max-width: 1400px) {
-      > ul {
-        > li {
-          width: 33%;
-        }
-      }
-    }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 990px) {
       > ul {
         > li {
           width: 49%;
         }
       }
     }
+
     @media only screen and (max-width: 750px) {
       > ul {
         justify-content: center;
         > li {
-          width: 60%;
+          width: 100%;
         }
       }
     }
@@ -73,22 +72,21 @@ function SquareSlider({collection}) {
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
   if(!products) return null
-  console.log(products)
 
   return (
     <ProductSlides>        
       <ul>
-        {products.map((product) => (
-        <li>
-          <img className='toProduct' src={`../../img/${product.imgUrl}.jpg`} alt='bowl' />
+        {collection.map((collection) => (
+        <li key={collection.id}>
+          <img className='toProduct' src={`../../img/${collection.imgUrl}.jpg`} alt='bowl' />
           <ul className='pickedDesc'>
             <li>
-              <h3 className='toProduct'>{product.name}</h3>
+              <h3 className='toProduct'>{collection.name}</h3>
             </li>
-            <li>${product.price}</li>
+            <li>${collection.price}</li>
             <li>
               <button className='toProduct'>
-                <Link to={`detailView/${product.id}`}>SHOP NOW</Link>
+                <Link to={`detailView/${collection.id}&${collection.collection}`}>SHOP NOW</Link>
               </button>
             </li>
           </ul>

@@ -30,12 +30,11 @@ function Cart() {
   const { loading, error, data: products} = state
   const { loading: countLoading, error: countError, data: counts} = cartCountState
   
-  if(loading) return <h1>Loading...</h1>
-  if(error) return <h1>Failed</h1>
-  if(!products) return null
-  if(countLoading) return <h1>Loading...</h1>
-  if(countError) return <h1>Failed</h1>
-  if(!counts) return null
+  if(loading & countLoading) return <h1>Loading...</h1>
+  if(error & countError) return <h1>Failed</h1>
+  if(!products & !counts) return null
+  console.log(products)
+  console.log(counts)
 
   let arr = []
   let totalPrice;

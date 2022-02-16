@@ -42,15 +42,21 @@ async function getCollections() {
   const response = await axios.get('http://localhost:8080/collections')
   return response.data
 }
+async function getPickedProducts() {
+  const response = await axios.get('http://localhost:8080/pickedProducts')
+  return response.data
+}
 
 function Main() {
   const state = useAsync(getCollections)
+  const pickedProductsState = useAsync(getPickedProducts)
   
   const { loading, error, data: collections} = state
+  const { loading: pickedLoading, error: pickedErr, data: collection} = pickedProductsState
   
-  if(loading) return <h1>Loading...</h1>
-  if(error) return <h1>Failed</h1>
-  if(!collections) return null
+  if(loading & pickedLoading) return <h1>Loading...</h1>
+  if(error & pickedErr) return <h1>Failed</h1>
+  if(!collections & !collection) return null
 
   const {collection:CN1, desc: CD1} = collections[0]
   const {collection:CN2, desc: CD2} = collections[5]
@@ -132,7 +138,7 @@ function Main() {
         <div className="textArea" className="innerContainer">
           <h1>PICKED FOR YOU</h1>
           <p>Treat yourself. Treat a friend. Treat a loved one.</p>
-          <SquareSlider id='recommendation' />
+          <SquareSlider collection={collection} id='recommendation' />
         </div>
       </section>
     </div>
