@@ -112,10 +112,10 @@ function ProductDetailView() {
   
   const recState = useAsync(getRecommendations)
 
-  const { loading: coll, error: collE, data: collection} = recState
+  const { loading: coll, error: collE, data: recommendations} = recState
   if(coll) return <h1>Loading...</h1>
   if(collE) return <h1>Failed</h1>
-  if(!collection) return null
+  if(!recommendations) return null
 
   if(loading) return <h1>Loading...</h1>
   if(error) return <h1>Failed</h1>
@@ -166,7 +166,7 @@ function ProductDetailView() {
           <h1>WE THINK YOU'LL LOVE THESE</h1>
           <p>Treat yourself. Treat a friend. Treat a loved one.</p>
         </div>
-        <SquareSlider collection={collection} />
+        <SquareSlider recommendations={recommendations} />
       </article>
     </DetailViewSection>
   );
