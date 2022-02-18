@@ -40,7 +40,7 @@ function CollectionBox({collection}) {
   return (
     <CollectArticle id='collArticle'>
       <div id='img' style={{
-        background: `url(./img/collections/${collection.imgUrl}.jpg) no-repeat no-repeat center`,
+        background: `url(./img/collections/${collection.thumbnailUrl}.jpg) no-repeat no-repeat center`,
         backgroundSize: "cover",
         height: "100%"
       }} />

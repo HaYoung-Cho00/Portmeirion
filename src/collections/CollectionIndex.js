@@ -34,8 +34,8 @@ function CollectionIndex() {
 
   return (
     <div className='productLists'>
-      <section>
-        <img src="../../img/collections/banner.png" alt="banner" />
+      <section id='banner'>
+        <img src={`../../img/${collInfo[0].bannerUrl}.jpg`} alt="banner" />
       </section>
       <section className='innerContainer introHeader'>
         <div>
