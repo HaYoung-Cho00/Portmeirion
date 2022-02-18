@@ -49,7 +49,7 @@ function Cart() {
     <table id='cart' className='innerContainer'>
       <thead>  
         <tr>
-          <th colSpan='5'>Your Cart ({counts[0]["COUNT(inCart)"]} Items)</th>
+          <th colSpan='5'>Your Cart ({counts[0]["COUNT(IF(inCart=1, 1, NULL))"]} Items)</th>
         </tr>
         <tr>
           <th>Product</th>

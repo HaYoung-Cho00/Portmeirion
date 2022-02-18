@@ -22,7 +22,7 @@ function Header() {
     if(error) return <h1>Failed</h1>
     if(!count) return null
 
-    const cartItems = count[0]['COUNT(inCart)']
+    const cartItems = count[0]['COUNT(IF(inCart=1, 1, NULL))']
 
     function onClick() {
       setClick(!click)
