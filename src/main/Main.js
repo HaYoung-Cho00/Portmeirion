@@ -6,8 +6,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import useAsync from '../hooks/useAsync'
 import { Carousel } from 'antd'
-import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-import SquareSlider from '../include/SquareSlider';
+import SquareSlider from '../include/SquareSlider'
+import { useState, useRef } from 'react'
 
 function createSlider(url, style) {
   const Slider = styled.h3`
@@ -48,9 +48,10 @@ async function getPickedProducts() {
 }
 
 function Main() {
+  const [ clicked, setClicked ] = useState(false)
   const state = useAsync(getCollections)
   const pickedProductsState = useAsync(getPickedProducts)
-  
+
   const { loading, error, data: collections} = state
   const { loading: pickedLoading, error: pickedErr, data: recommendations} = pickedProductsState
   
@@ -62,6 +63,7 @@ function Main() {
   const {collection:CN1, desc: CD1} = collections[0]
   const {collection:CN2, desc: CD2} = collections[5]
   const {collection:CN3, desc: CD3} = collections[3]
+
   return(
     <div id="main">
       <section id='visual'>
@@ -83,7 +85,43 @@ function Main() {
             <h1><Link to='new'>NEW ARRIVAL</Link></h1>
             <p>We think you'll love these</p>
           </div>
-          <div id="newItems" className="innerContainer">
+          {/* <ul id='navigator'>
+            <li><BsCircleFill /></li>
+            <li><BsCircleFill /></li>
+            <li><BsCircleFill /></li>
+            <li><BsCircleFill /></li>
+          </ul> */}
+          <div style={{opacity:`${setClicked? 1: 0}`}} id="newItems" className="innerContainer">
+            <div id='newDesc1'>
+              <p>
+                Award-winning British designer, Sara Miller brings her vision of print, pattern and color to a beautiful collection of tableware and gifts.
+              </p>
+            </div>
+            <img className='toProduct' src="./img/Collection2.jpg" alt='new' />
+            <div id='newDesc2'>
+              <p>
+              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
+              </p>
+              <button><Link to='new'>Read More</Link></button>
+            </div>
+            <h3 className='toProduct'>Sara Miller London</h3>
+          </div>
+          {/* <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
+            <div id='newDesc1'>
+              <p>
+                Inspired by nature with graceful shapes and organic contours Arbor & Floret are designed to sit separately or together.
+              </p>
+            </div>
+            <img className='toProduct' src="./img/Collection3.jpg" alt='new' />
+            <div id='newDesc2'>
+              <p>
+              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
+              </p>
+              <button><Link to='new'>Read More</Link></button>
+            </div>
+            <h3 className='toProduct'>BOTANIC GARDEN</h3>
+          </div>
+          <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
@@ -98,6 +136,21 @@ function Main() {
             </div>
             <h3 className='toProduct'>BOTANIC GARDEN</h3>
           </div>
+          <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
+            <div id='newDesc1'>
+              <p>
+                Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
+              </p>
+            </div>
+            <img className='toProduct' src="./img/main/new/new1.jpg" alt='new' />
+            <div id='newDesc2'>
+              <p>
+              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
+              </p>
+              <button><Link to='new'>Read More</Link></button>
+            </div>
+            <h3 className='toProduct'>BOTANIC GARDEN</h3>
+          </div> */}
         </article>
         <article id="collections"  className="innerContainer">
           <div className="textArea">
@@ -136,11 +189,13 @@ function Main() {
             </Link>
           </div>
         </article>
-        <div className="textArea" className="innerContainer">
-          <h1>PICKED FOR YOU</h1>
-          <p>Treat yourself. Treat a friend. Treat a loved one.</p>
-          <SquareSlider recommendations={recommendations} id='recommendation' />
-        </div>
+        <article id='recommendArt'>
+          <div className="textArea" className="innerContainer">
+            <h1>PICKED FOR YOU</h1>
+            <p>Treat yourself. Treat a friend. Treat a loved one.</p>
+            <SquareSlider recommendations={recommendations} id='recommendation' />
+          </div>
+        </article>
       </section>
     </div>
   )
