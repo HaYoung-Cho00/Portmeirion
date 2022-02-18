@@ -91,7 +91,7 @@ function Main() {
             <li><BsCircleFill /></li>
             <li><BsCircleFill /></li>
           </ul> */}
-          <div style={{opacity:`${setClicked? 1: 0}`}} id="newItems" className="innerContainer">
+          <div id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
                 Award-winning British designer, Sara Miller brings her vision of print, pattern and color to a beautiful collection of tableware and gifts.
@@ -106,7 +106,7 @@ function Main() {
             </div>
             <h3 className='toProduct'>Sara Miller London</h3>
           </div>
-          {/* <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
+          {/* <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
                 Inspired by nature with graceful shapes and organic contours Arbor & Floret are designed to sit separately or together.
@@ -121,7 +121,7 @@ function Main() {
             </div>
             <h3 className='toProduct'>BOTANIC GARDEN</h3>
           </div>
-          <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
+          <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
@@ -136,7 +136,7 @@ function Main() {
             </div>
             <h3 className='toProduct'>BOTANIC GARDEN</h3>
           </div>
-          <div style={{opacity:`${setClicked? '1': 0}`}} id="newItems" className="innerContainer">
+          <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
                 Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.

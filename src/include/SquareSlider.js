@@ -19,7 +19,11 @@ const ProductSlides = styled.article`
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: 25%;
+        width: 24%;
+        img {
+          border: 1px solid var(--gray);
+          width: 100%;
+        }
         a {
           color: var(--navy);
         }
