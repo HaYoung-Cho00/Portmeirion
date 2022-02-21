@@ -12,7 +12,7 @@ const QtyInput = styled.input`
 
 function Quantity({defaultValue, onChange, type}) {
   return (
-    <QtyInput type={type} onChange={onChange} defaultValue={defaultValue} />
+    <QtyInput type={type} min="1" onChange={onChange} defaultValue={defaultValue} />
   );
 }
 
