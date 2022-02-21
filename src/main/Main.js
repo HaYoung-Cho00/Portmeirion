@@ -189,8 +189,8 @@ function Main() {
             </Link>
           </div>
         </article>
-        <article id='recommendArt'>
-          <div className="textArea" className="innerContainer">
+        <article id='recommendArt' className="innerContainer">
+          <div className="textArea">
             <h1>PICKED FOR YOU</h1>
             <p>Treat yourself. Treat a friend. Treat a loved one.</p>
             <SquareSlider recommendations={recommendations} id='recommendation' />

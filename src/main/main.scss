@@ -1,7 +1,10 @@
 #main {
   position: relative;
-  article {
-    padding: 0 20px;
+  > section {
+    > article {
+      padding: 0 20px;
+      margin: 100px auto 250px;
+    }
   }
   #navigator {
     position: absolute;
@@ -25,9 +28,6 @@
     &:hover {
       color:var(--navy)
     }
-  }
-  article {
-    margin: 100px auto 250px;
   }
   .textArea {
     margin: 50px auto;
