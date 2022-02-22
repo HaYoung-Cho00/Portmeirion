@@ -15,15 +15,11 @@ import { createContext,useState } from "react";
 
 function App() {
   const [ cartNum, setCartNum ] = useState("cart");
- const toggleCart = () => {
-    setCartNum(cartNum=>{
-      return cartNum === "cart"? "value" : "cart"
-    });
- }
- const CartContext = createContext("en");
+  const toggleCart = () => setCartNum(cartNum => cartNum === "cart"? "value" : "cart");
+  
+  const CartContext = createContext("en");
   return (
     <CartContext.Provider value={cartNum}>
-
     <div className="App">
       <Header></Header>
       <Routes>
