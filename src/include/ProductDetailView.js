@@ -89,7 +89,7 @@ const DetailViewSection = styled.section`
   }
 `
 
-function ProductDetailView() {
+function ProductDetailView({toggleCart}) {
   const param = useParams()
   const { id, collectionParam } = param
   
@@ -98,30 +98,24 @@ function ProductDetailView() {
     return response.data
   }
   
-  const [initialPrice, setinitialPrice] = useState(0)
-  const [initialQty, setinitialQty] = useState(1)
-
-  const state = useAsync(getProductDetails)
-  
-  const { loading, error, data: productInfo} = state
-  
   async function getRecommendations() {
     const response = await axios.get(`http://localhost:8080/recommendations/${collectionParam}`)
     return response.data
   }
-  
+
+  const [initialPrice, setinitialPrice] = useState(0)
+  const [initialQty, setinitialQty] = useState(1)
+
+  const state = useAsync(getProductDetails, [id])
   const recState = useAsync(getRecommendations)
-
+  
+  const { loading, error, data: productInfo} = state
   const { loading: coll, error: collE, data: recommendations} = recState
-  if(coll) return <h1>Loading...</h1>
-  if(collE) return <h1>Failed</h1>
-  if(!recommendations) return null
 
-  if(loading) return <h1>Loading...</h1>
-  if(error) return <h1>Failed</h1>
-  if(!productInfo) return null
-  
-  
+  if(coll || loading) return <h1>Loading...</h1>
+  if(collE || error) return <h1>Failed</h1>
+  if(!recommendations || !productInfo) return null
+
   function onChange(e) {
     const qty = parseInt(e.target.value)
     const total = (qty * productInfo[0].price).toFixed(2)
@@ -130,6 +124,7 @@ function ProductDetailView() {
   }
 
   function insertCustomer() {
+    toggleCart();
     axios.put(`http://localhost:8080/addCart/${id}`, {
     quantity: initialQty,
     inCart: 1,
@@ -138,7 +133,6 @@ function ProductDetailView() {
     .catch((err) => {console.log(err)})
   }
 
-  
   return (
     <DetailViewSection className='innerContainer'>
       <article>

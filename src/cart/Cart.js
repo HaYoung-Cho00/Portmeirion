@@ -24,16 +24,14 @@ function Cart() {
     const response = await axios.get('http://localhost:8080/cartCount')
     return response.data
   }
-  const state = useAsync(getCartProducts)
   const cartCountState = useAsync(countProducts)
-  
+  const state = useAsync(getCartProducts)
   const { loading, error, data: products} = state
   const { loading: countLoading, error: countError, data: counts} = cartCountState
-  
-  if(loading & countLoading) return <h1>Loading...</h1>
-  if(error & countError) return <h1>Failed</h1>
-  if(!products) return null
-  if(!counts) return null
+    
+  if(loading || countLoading) return <h1>Loading...</h1>
+  if(error || countError) return <h1>Failed</h1>
+  if(!products || !counts) return null
 
   let arr = []
   let totalPrice;
@@ -45,6 +43,15 @@ function Cart() {
     let total = parseFloat(prev) + parseFloat(curr)
     return total.toFixed(2)
   })
+
+  function deleteCartItems(id) {
+    axios.put(`http://localhost:8080/deleteCart/${id}`, {
+    inCart: 0,
+    })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+  }
+
   return (
     <table id='cart' className='innerContainer'>
       <thead>  
@@ -64,10 +71,11 @@ function Cart() {
           products.map(product => (
             <tr key={product.id}>
               <td><img src={`./img/${product.imgUrl}.jpg`} alt='cartItem1 '/></td>
-              <td><Link to={`/detailView/${product.id}`}>{product.name}</Link></td>
+              <td><Link to={`/detailView/${product.id}&${product.collection}`}>{product.name}</Link></td>
               <td>
                 <div className='qty'>
                   <QtyInput readOnly defaultValue={product.quantity} />
+                  <span onClick={() => deleteCartItems(product.id)}>Delete</span>
                 </div>
               </td>
               <td>${product.price}</td>

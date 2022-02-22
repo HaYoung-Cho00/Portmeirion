@@ -55,10 +55,9 @@ function Main() {
   const { loading, error, data: collections} = state
   const { loading: pickedLoading, error: pickedErr, data: recommendations} = pickedProductsState
   
-  if(loading & pickedLoading) return <h1>Loading...</h1>
-  if(error & pickedErr) return <h1>Failed</h1>
-  if(!collections) return null
-  if(!recommendations) return null
+  if(loading || pickedLoading) return <h1>Loading...</h1>
+  if(error || pickedErr) return <h1>Failed</h1>
+  if(!collections || !recommendations) return null
 
   const {collection:CN1, desc: CD1} = collections[0]
   const {collection:CN2, desc: CD2} = collections[5]
@@ -100,57 +99,12 @@ function Main() {
             <img className='toProduct' src="./img/Collection2.jpg" alt='new' />
             <div id='newDesc2'>
               <p>
-              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
+                Enter the enchanting world of Sara Miller London. With a love of playful prints, vibrant patterns and exquisite use of colour, the Sara Miller collections create a visual feast for the home.
               </p>
               <button><Link to='new'>Read More</Link></button>
             </div>
             <h3 className='toProduct'>Sara Miller London</h3>
           </div>
-          {/* <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
-            <div id='newDesc1'>
-              <p>
-                Inspired by nature with graceful shapes and organic contours Arbor & Floret are designed to sit separately or together.
-              </p>
-            </div>
-            <img className='toProduct' src="./img/Collection3.jpg" alt='new' />
-            <div id='newDesc2'>
-              <p>
-              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
-              </p>
-              <button><Link to='new'>Read More</Link></button>
-            </div>
-            <h3 className='toProduct'>BOTANIC GARDEN</h3>
-          </div>
-          <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
-            <div id='newDesc1'>
-              <p>
-                Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
-              </p>
-            </div>
-            <img className='toProduct' src="./img/main/new/new1.jpg" alt='new' />
-            <div id='newDesc2'>
-              <p>
-              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
-              </p>
-              <button><Link to='new'>Read More</Link></button>
-            </div>
-            <h3 className='toProduct'>BOTANIC GARDEN</h3>
-          </div>
-          <div style={{opacity:`${clicked? '1': 0}`}} id="newItems" className="innerContainer">
-            <div id='newDesc1'>
-              <p>
-                Loved and recognized worldwide. Botanic Garden is a classic floral pattern that is as fresh and exciting today as it was in 1972.
-              </p>
-            </div>
-            <img className='toProduct' src="./img/main/new/new1.jpg" alt='new' />
-            <div id='newDesc2'>
-              <p>
-              A true British classic, Botanic Garden was designed by the celebrated designer Susan Williams-Ellis in 1972. The mix and match floral motifs, inspired by 19th century botanical illustrations, bring a bit of the garden to your table.
-              </p>
-              <button><Link to='new'>Read More</Link></button>
-            </div>
-            <h3 className='toProduct'>BOTANIC GARDEN</h3>
-          </div> */}
         </article>
         <article id="collections"  className="innerContainer">
           <div className="textArea">
@@ -161,25 +115,19 @@ function Main() {
             <Link id='coll1' className='toProduct' to={`collection/${CN1}`} />
             <div id='desc1' className='desc'>
               <h1>{CN1}</h1>
-              <p>
-                {CD1}
-              </p>
+              <p>{CD1}</p>
               <button>Click The Image To Read More</button>
             </div>
             <Link id='coll2' className='toProduct' to={`collection/${CN2}`} />
             <div id='desc2' className='desc'>
               <h1>{CN2}</h1>
-              <p>
-                {CD2}
-              </p>
+              <p>{CD2}</p>
               <button>Click The Image To Read More</button>
             </div>
             <Link id='coll3' className='toProduct' to={`collection/${CN3}`} />
             <div id='desc3' className='desc'>
               <h1>{CN3}</h1>
-              <p>
-                {CD3}
-              </p>
+              <p>{CD3}</p>
               <button>Click The Image To Read More</button>
             </div>
             <Link to='collections'>

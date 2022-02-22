@@ -11,22 +11,21 @@ function Header() {
     const response = await axios.get('http://localhost:8080/cartCount')
     return response.data
   }
-  
+  // const [ cartnum, setCartnum ] = useState("");
   const [ click, setClick ] = useState(false)
 
-    const state = useAsync(getCartCount)
-    
-    const { loading, error, data: count} = state
-    
-    if(loading) return <h1>Loading...</h1>
-    if(error) return <h1>Failed</h1>
-    if(!count) return null
+  const state = useAsync(getCartCount);
+  
+  const { loading, error, data: count} = state
+  
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <h1>Failed</h1>
+  if(!count) return null
 
-    const cartItems = count[0]['COUNT(IF(inCart=1, 1, NULL))']
+  const cartItems = count[0]['COUNT(IF(inCart=1, 1, NULL))']
 
-    function onClick() {
-      setClick(!click)
-    }
+  const onClick = () => setClick(!click)
+
   return (
     <header>
       <nav className='innerContainer'>

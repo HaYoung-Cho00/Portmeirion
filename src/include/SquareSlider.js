@@ -64,39 +64,27 @@ const ProductSlides = styled.article`
 `
 
 function SquareSlider({recommendations}) {
-  // async function getRecommendations() {
-  //   const response = await axios.get(`http://localhost:8080/recommendations/${collName}`)
-  //   return response.data
-  // }
-  
-  // const state = useAsync(getRecommendations)
-
-  // const { loading, error, data: recommendations} = state
-
-  // if(loading) return <h1>Loading...</h1>
-  // if(error) return <h1>Failed</h1>
-  // if(!recommendations) return null
-  // console.log(recommendations)
-
   return (
     <ProductSlides>        
       <ul>
-        {recommendations.map((product) => (
-        <li key={product.id}>
-          <img className='toProduct' src={`../../img/${product.imgUrl}.jpg`} alt='bowl' />
-          <ul className='pickedDesc'>
-            <li>
-              <h3 className='toProduct'>{product.name}</h3>
+        {
+          recommendations.map(product => (
+            <li key={product.id}>
+              <img className='toProduct' src={`../../img/${product.imgUrl}.jpg`} alt='bowl' />
+              <ul className='pickedDesc'>
+                <li>
+                  <h3 className='toProduct'>{product.name}</h3>
+                </li>
+                <li>${product.price}</li>
+                <li>
+                  <button className='toProduct'>
+                    <Link to={`/detailView/${product.id}&${product.collection}`}>SHOP NOW</Link>
+                  </button>
+                </li>
+              </ul>
             </li>
-            <li>${product.price}</li>
-            <li>
-              <button className='toProduct'>
-                <Link to={`/detailView/${product.id}&${product.collection}`}>SHOP NOW</Link>
-              </button>
-            </li>
-          </ul>
-        </li>
-        ))}
+          ))
+        }
       </ul>
     </ProductSlides>
   );

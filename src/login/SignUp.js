@@ -25,7 +25,6 @@ function SignUp() {
       ...formData,
       [name]: value,
     })
-    console.log(formData)
   }
   
   const onSubmit = (e) => {
