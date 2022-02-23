@@ -11,7 +11,6 @@ function Header() {
     const response = await axios.get('http://localhost:8080/cartCount')
     return response.data
   }
-  // const [ cartnum, setCartnum ] = useState("");
   const [ click, setClick ] = useState(false)
 
   const state = useAsync(getCartCount);
@@ -48,7 +47,6 @@ function Header() {
               <div>{cartItems}</div>
             </Link>
           </li>
-          <li><AiOutlineHeart /></li>
         </ul>
         <ul id='smallViewMenu'>
           <RiMenuFill onClick={onClick} className={click? 'onClick': ''} />
@@ -60,7 +58,6 @@ function Header() {
               <li className='mobileMenu'>Contact Us</li>
               <li><Link to='login'>Login</Link></li>
               <li><Link to='cart'>Cart</Link></li>
-              <li>Wishlist</li>
             </ul>
           </li>
         </ul>
