@@ -4,12 +4,12 @@ import 'antd/dist/antd.css'
 import styled from 'styled-components'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import useAsync from '../hooks/useAsync'
+import UseAsync from '../hooks/UseAsync'
 import { Carousel } from 'antd'
 import SquareSlider from '../include/SquareSlider'
 import { useState, useRef } from 'react'
 
-function createSlider(url, style) {
+function createSlider(url) {
   const Slider = styled.h3`
   background: url(${url}) no-repeat center;
   height: 700px;
@@ -39,7 +39,7 @@ const Slider2 = createSlider('./img/main/slider/slider1.jpg')
 const Slider3 = createSlider('./img/main/slider/slider2.jpg')
 
 async function getCollections() {
-  const response = await axios.get('http://localhost:8080/collections')
+  const response = await axios.get('http://localhost:8080/collectionLists')
   return response.data
 }
 async function getPickedProducts() {
@@ -49,8 +49,8 @@ async function getPickedProducts() {
 
 function Main() {
   const [ clicked, setClicked ] = useState(false)
-  const state = useAsync(getCollections)
-  const pickedProductsState = useAsync(getPickedProducts)
+  const state = UseAsync(getCollections)
+  const pickedProductsState = UseAsync(getPickedProducts)
 
   const { loading, error, data: collections} = state
   const { loading: pickedLoading, error: pickedErr, data: recommendations} = pickedProductsState

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Quantity from './Quantity';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import useAsync from '../hooks/useAsync';
+import UseAsync from '../hooks/UseAsync';
 import { useState } from 'react'
 import SquareSlider from './SquareSlider';
 
@@ -106,8 +106,8 @@ function ProductDetailView({toggleCart}) {
   const [initialPrice, setinitialPrice] = useState(0)
   const [initialQty, setinitialQty] = useState(1)
 
-  const state = useAsync(getProductDetails, [id])
-  const recState = useAsync(getRecommendations)
+  const state = UseAsync(getProductDetails, [id])
+  const recState = UseAsync(getRecommendations)
   
   const { loading, error, data: productInfo} = state
   const { loading: coll, error: collE, data: recommendations} = recState

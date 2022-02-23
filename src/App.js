@@ -18,6 +18,7 @@ function App() {
   const toggleCart = () => setCartNum(cartNum => cartNum === "cart"? "value" : "cart");
   
   const CartContext = createContext("en");
+  
   return (
     <CartContext.Provider value={cartNum}>
     <div className="App">

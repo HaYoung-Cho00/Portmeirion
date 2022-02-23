@@ -25,6 +25,16 @@
   #mobileSearchBox {
     display: none;
   }
+  .noSelectedProducts {
+    background-color: aliceblue;
+  }
+  .noSelectedProducts::before {
+    content: "We can't find products matching the selection";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
 
 @media only screen and (max-width: 700px) {

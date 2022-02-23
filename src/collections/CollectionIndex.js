@@ -1,28 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../include/style/productLists.scss'
-import SearchBox from '../include/SearchBox';
+import '../include/style/searchBox.scss'
 import MobileSearchBox from '../include/MobileSearchBox';
 import Contents from '../include/Contents';
 import axios from 'axios';
-import useAsync from '../hooks/useAsync';
+import UseAsync from '../hooks/UseAsync';
 import { useParams } from 'react-router-dom';
 import './collecIndex.scss'
+import NoSelection from '../include/NoSelection';
 
 function CollectionIndex() {
   const param = useParams()
   const { name } = param
 
+  const [ optionParam, setOption ] = useState('price')
+  const [ valueParam, setValue  ] = useState(0)
+
   async function getCollectionLists() {
-    const response = await axios.get(`http://localhost:8080/collection/${name}`)
+    const response = await axios.get(`http://localhost:8080/collection/${name}/${optionParam}&${valueParam}`)
     return response.data
   }
+
   async function getCollectionInfo() {
     const response = await axios.get(`http://localhost:8080/collectionInfo/${name}`)
     return response.data
   }
 
-  const state = useAsync(getCollectionLists)
-  const coll = useAsync(getCollectionInfo)
+  const checked = (e, targetOption) => {
+    const checkedValue = e.target.checked
+    const value = e.target.value
+    if (checkedValue) {
+      setOption(targetOption)
+      setValue(value)
+    }
+  }
+
+  const state = UseAsync(getCollectionLists, [optionParam, valueParam])
+  const coll = UseAsync(getCollectionInfo)
   
   const { loading, error, data: products} = state
   const { loading: collLoading, error: collError, data: collInfo} = coll
@@ -43,9 +57,29 @@ function CollectionIndex() {
         </div>
       </section>
       <section className='innerContainer contents'>
-        <SearchBox />
+      <aside id='searchBox'>
+          <div>
+            <div className='selectType' >
+              <h3>Type</h3>
+            </div>
+            <ul className='options'>
+              <li>New <input type='checkbox' value='1' onClick={(e) => checked(e, 'newArrival')} /></li>
+              <li>Best Sellers <input type='checkbox' value='1' onClick={(e) => checked(e, 'best')} /></li>
+            </ul>
+          </div>
+          <div>
+            <div className='selectType'>
+              <h3>Price</h3>
+            </div>
+            <ul className='options'>
+              <li>$0 - $49.99 <input type='checkbox' value='49.99' onClick={(e) => checked(e, 'price')} /></li>
+              <li>$50 - $99.99 <input type='checkbox' value='99.99' onClick={(e) => checked(e, 'price')} /></li>
+              <li>$100 - $199.99 <input type='checkbox' value='199.99' onClick={(e) => checked(e, 'price')} /></li>
+            </ul>
+          </div>
+        </aside>
         <MobileSearchBox />
-        <Contents products={products} />
+        {products.length == 0? <NoSelection />: <Contents products={products} />}
       </section>
     </div>
   );

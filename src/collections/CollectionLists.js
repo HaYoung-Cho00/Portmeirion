@@ -1,7 +1,7 @@
 import React from 'react';
 import CollectionBox from './CollectionBox';
 import styled from 'styled-components';
-import useAsync from '../hooks/useAsync'
+import UseAsync from '../hooks/UseAsync'
 import axios from 'axios'
 
 const CollectSection = styled.section`
@@ -21,12 +21,12 @@ const CollectSection = styled.section`
   }
 `
 async function getCollections() {
-  const response = await axios.get('http://localhost:8080/collections')
+  const response = await axios.get('http://localhost:8080/collectionLists')
   return response.data
 }
 
 function CollectionLists(props) {
-  const state = useAsync(getCollections)
+  const state = UseAsync(getCollections)
   
   const { loading, error, data: collections} = state
   

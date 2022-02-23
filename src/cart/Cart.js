@@ -2,7 +2,7 @@ import React from 'react';
 import './cart-style.scss';
 import Button from '../include/Button'
 import axios from 'axios'
-import useAsync from '../hooks/useAsync'
+import UseAsync from '../hooks/UseAsync'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -24,8 +24,8 @@ function Cart() {
     const response = await axios.get('http://localhost:8080/cartCount')
     return response.data
   }
-  const cartCountState = useAsync(countProducts)
-  const state = useAsync(getCartProducts)
+  const cartCountState = UseAsync(countProducts)
+  const state = UseAsync(getCartProducts)
   const { loading, error, data: products} = state
   const { loading: countLoading, error: countError, data: counts} = cartCountState
     
@@ -44,7 +44,7 @@ function Cart() {
     return total.toFixed(2)
   })
 
-  function deleteCartItems(id) {
+  const deleteCartItems = (id) => {
     axios.put(`http://localhost:8080/deleteCart/${id}`, {
     inCart: 0,
     })

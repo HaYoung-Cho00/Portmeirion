@@ -1,10 +1,10 @@
 import './style/header.scss';
 import { Link } from 'react-router-dom'
 import { RiMenuFill } from 'react-icons/ri'
-import { AiOutlineHeart, AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
+import { AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
 import axios from 'axios'
 import { useState } from 'react'
-import useAsync from '../hooks/useAsync'
+import UseAsync from '../hooks/UseAsync'
 // li 목록들 받아와서 반복문 돌리기
 function Header() {
   async function getCartCount() {
@@ -13,7 +13,7 @@ function Header() {
   }
   const [ click, setClick ] = useState(false)
 
-  const state = useAsync(getCartCount);
+  const state = UseAsync(getCartCount);
   
   const { loading, error, data: count} = state
   

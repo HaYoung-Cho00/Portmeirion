@@ -1,9 +1,7 @@
 import React from 'react';
 import Button from '../include/Button';
-import Input from './Input';
 import './signUp-style.scss'
 import axios from 'axios';
-import useAsync from '../hooks/useAsync';
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -39,6 +37,7 @@ function SignUp() {
       confirmPassword: '',
     })
   }
+  
   function insertCustomer() {
     axios.post("http://localhost:8080/login/signup", formData)
     .then((res) => {
