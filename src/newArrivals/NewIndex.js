@@ -5,12 +5,12 @@ import MobileSearchBox from '../include/MobileSearchBox'
 import useAsync from '../hooks/useAsync'
 import axios from 'axios'
 
-async function getProducts() {
-  const response = await axios.get('http://localhost:8080/new')
-  return response.data
-}
-
 function NewIndex() {
+  async function getProducts() {
+    const response = await axios.get('http://localhost:8080/new')
+    return response.data
+  }
+
   const state = useAsync(getProducts)
 
   const { loading, error, data: products} = state

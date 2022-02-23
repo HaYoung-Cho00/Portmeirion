@@ -1,25 +1,7 @@
 import './style/contents.scss'
-import { useParams, Link } from 'react-router-dom'
-import axios from 'axios'
-import useAsync from '../hooks/useAsync'
+import { Link } from 'react-router-dom'
 
 function Contents({products}) {
-  const param = useParams()
-  const { id } = param
-
-  async function getCollectionLists() {
-    const response = await axios.get(`http://localhost:8080/collection/${id}`)
-    return response.data
-  }
-  
-  const state = useAsync(getCollectionLists)
-  
-  const { loading, error, data: items} = state
-
-  if(loading) return <h1>Loading...</h1>
-  if(error) return <h1>Failed</h1>
-  if(!items) return null
-
   return(
     <article id='contents'>
       <ul>
