@@ -40,7 +40,7 @@ function Header() {
           <li>Contact Us</li>
         </ul>
         <ul id='desktopViewMenu'>
-          <li><AiOutlineSearch /></li>
+          <li><AiOutlineSearch  onClick={onClick} /></li>
           <li><Link to='login'><AiOutlineUser /></Link></li>
           <li>
             <Link id='cart' to='cart'>
@@ -63,6 +63,9 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <div id='searchContainer' className={click? 'onClick': ''}>
+
+      </div>
     </header>
   );
 }

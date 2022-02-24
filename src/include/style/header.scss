@@ -94,6 +94,18 @@ header {
       display: block;
     }
   }
+  #searchContainer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 70px;
+    height: 100vh;
+    background-color: white;
+    display: none;
+  }
+  #searchContainer.onClick {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 1100px) {
