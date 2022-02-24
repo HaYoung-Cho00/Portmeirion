@@ -1,7 +1,7 @@
 import './style/header.scss';
 import { Link } from 'react-router-dom'
 import { RiMenuFill } from 'react-icons/ri'
-import { AiOutlineUser, AiOutlineShopping } from 'react-icons/ai'
+import { AiOutlineUser, AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai'
 import axios from 'axios'
 import { useState } from 'react'
 import UseAsync from '../hooks/UseAsync'
@@ -40,6 +40,7 @@ function Header() {
           <li>Contact Us</li>
         </ul>
         <ul id='desktopViewMenu'>
+          <li><AiOutlineSearch /></li>
           <li><Link to='login'><AiOutlineUser /></Link></li>
           <li>
             <Link id='cart' to='cart'>
