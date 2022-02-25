@@ -6,6 +6,9 @@ header {
   position: fixed;
   z-index: 1000;
   top: 0;
+  .notAllowed {
+    cursor: not-allowed;
+  }
   #cart {
     position: relative;
     div {
@@ -95,13 +98,71 @@ header {
     }
   }
   #searchContainer {
+    right: 0;
     position: absolute;
-    width: 100%;
-    left: 0;
+    padding: 50px 0;
+    width: 600px;
     top: 70px;
-    height: 100vh;
+    height: 800px;
     background-color: white;
     display: none;
+    border: 1px solid var(--gray);
+    > form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      h1 {
+        font-size: 30px;
+      }
+      input {
+        width: 80%;
+        height: 30px;
+        border-bottom: 1px solid var(--navy);
+        color: var(--navy);
+        margin-right: 10px;
+      }
+      button {
+        background: none;
+      }
+      svg {
+        color: var(--navy);
+        width: 30px;
+        height: 30px;
+      }
+    }
+    > ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      li {
+        display: flex;
+        height: 90px;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 11px;
+        a {
+          color: var(--navy);
+        }
+        h3 {
+          margin-bottom: 0;
+        }
+        img {
+          margin: 0 20px 0 0;
+          width: 90px;
+          height: 90px;
+          border: 1px solid var(--gray);
+        }
+      }
+    }
+    #closeIcon {
+      width: 30px;
+      height: 30px;
+      color: var(--navy);
+      position: absolute;
+      left: 50%;
+      bottom: 50px;
+    }
   }
   #searchContainer.onClick {
     display: block;
@@ -133,6 +194,9 @@ header {
           color:var(--navy)
         }
       }
+    }
+    #searchContainer, #searchIcon {
+      display: none;
     }
   }
 }
