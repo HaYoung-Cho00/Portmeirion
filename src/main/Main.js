@@ -1,5 +1,4 @@
 import './main.scss';
-import { BsCircleFill } from 'react-icons/bs'
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
 import axios from 'axios'
@@ -7,7 +6,7 @@ import { Link } from 'react-router-dom'
 import UseAsync from '../hooks/UseAsync'
 import { Carousel } from 'antd'
 import SquareSlider from '../include/SquareSlider'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 function createSlider(url) {
   const Slider = styled.h3`
@@ -48,7 +47,6 @@ async function getPickedProducts() {
 }
 
 function Main() {
-  const [ clicked, setClicked ] = useState(false)
   const state = UseAsync(getCollections)
   const pickedProductsState = UseAsync(getPickedProducts)
 
@@ -84,12 +82,6 @@ function Main() {
             <h1><Link to='new'>NEW ARRIVAL</Link></h1>
             <p>We think you'll love these</p>
           </div>
-          {/* <ul id='navigator'>
-            <li><BsCircleFill /></li>
-            <li><BsCircleFill /></li>
-            <li><BsCircleFill /></li>
-            <li><BsCircleFill /></li>
-          </ul> */}
           <div id="newItems" className="innerContainer">
             <div id='newDesc1'>
               <p>
