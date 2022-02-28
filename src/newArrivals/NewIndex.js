@@ -79,7 +79,7 @@ function NewIndex() {
           </div>
         </aside>
         <MobileSearchBox />
-        {products.length == 0? <NoSelection />: <Contents products={products} />}
+        {products.length === 0? <NoSelection />: <Contents products={products} />}
       </section>
     </div>
   );
