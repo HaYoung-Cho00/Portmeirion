@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import UseAsync from '../hooks/UseAsync'
 import { Carousel } from 'antd'
 import SquareSlider from '../include/SquareSlider'
-import { useState } from 'react'
 
 function createSlider(url) {
   const Slider = styled.h3`
